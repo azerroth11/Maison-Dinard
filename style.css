@@ -1,0 +1,181 @@
+:root {
+    --main: hsl(32, 15%, 77%);
+    --accent: hsl(347, 29%, 30%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.map-body {
+    background-color: var(--main);
+}
+
+/* Commons */
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+i {
+    cursor: pointer;
+}
+
+/* Javascript */
+.invisible {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Nav */
+nav {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--main);
+    display: grid;
+    place-items: center;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 70vh;
+    width: 100%;
+}
+
+.hero img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.hero-links {
+    position: absolute;
+    display: grid;
+    gap: 2rem;
+}
+
+.hero a {
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-radius: -50px;
+}
+
+.hero i {
+    font-size: 48px;
+    padding: 2rem;
+}
+
+.hero .shop {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+i:hover {
+    animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    0% {
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Map + Legend */
+.map {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Map */
+#chartdiv {
+    height: 75vh;
+    width: 100%;
+    margin: auto;
+}
+
+.legend {
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+    box-shadow: 2px 3px 20px rgba(0, 0, 0, 1);
+    /* overflow: hidden; */
+}
+
+.legend h1 {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 0.75rem;
+    height: 50px;
+}
+
+.legend .region {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 640px;
+    max-width: 920px;
+}
+
+.legend .region .domain {
+    min-width: 460px;
+    position: relative;
+    border: 1px solid #fff;
+    flex-grow: 1;
+}
+
+.legend .region .domain h2 {
+    position: absolute;
+    color: #fff;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+}
+
+.legend .region .domain ul {
+    position: absolute;
+    color: #fff;
+    top: 3rem;
+    left: 3rem;
+    z-index: 100;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.legend img {
+    height: 175px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(40%);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: var(--main);
+}

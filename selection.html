@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+        <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/maps.js"></script>
+        <script src="./franceHigh.js"></script>
+        <title>Maison Dinard & Fils - Notre Selection</title>
+    </head>
+    <body class="map-body">
+        <nav><img src="./img/logo-transparent.png" alt="logo" /></nav>
+        <section class="map">
+            <div id="chartdiv"></div>
+            <div class="legend">
+                <h1 class="regionH1">
+                    Cliquez sur une région pour découvrir notre sélection
+                </h1>
+                <div class="grand-est invisible region">
+                    <div class="domain">
+                        <h2>DOMAINE DES COMTES DE LUPFEN</h2>
+                        <ul>
+                            <li>VIN D'ALSACE</li>
+                            <li>EAU DE VIE</li>
+                        </ul>
+                        <img src="./img/domains/blanck.jpg" alt="" />
+                    </div>
+                </div>
+
+                <div class="auvergne invisible region">
+                    <div class="domain">
+                        <h2>CHATEAU DE PIZAY</h2>
+                        <ul>
+                            <li>MORGON</li>
+                            <li>BEAUJOLAIS</li>
+                            <li>BOURGOGNE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+                </div>
+
+                <div class="nouvelle-aquitaine invisible region">
+                    <div class="domain">
+                        <h2>MAISON H. CUVELIER & FILS</h2>
+                        <ul>
+                            <li>SAINT ESTEPHE</li>
+                            <li>SAINT JULIEN</li>
+                            <li>GRANDS VINS DE BORDEAUX</li>
+                        </ul>
+                        <img src="./img/domains/cuvelier.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>VIGNOBLES ANDRE LURTON</h2>
+                        <ul>
+                            <li>BORDEAUX ET ENTRE-DEUX-MERS</li>
+                            <li>PESSAC LEOGNAN</li>
+                            <li>MARGAUX</li>
+                            <li>LUSSAC SAINT EMILION</li>
+                        </ul>
+                        <img src="./img/domains/chateau-lurton.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>CHATEAU RAMAGE LA BATISSE</h2>
+                        <ul>
+                            <li>HAUT-MEDOC</li>
+                        </ul>
+                        <img
+                            src="./img/domains/Chateau-Ramage-la-Batisse.jpg"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="domain">
+                        <h2>CHATEAU DE BELCIER</h2>
+                        <ul>
+                            <li>CÔTES DE CASTILLON</li>
+                        </ul>
+                        <img
+                            src="./img/domains/Château-de-Belcier.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <div class="bourgogne invisible region">
+                    <div class="domain">
+                        <h2>DOMAINE LAMY-PILLOT</h2>
+                        <ul>
+                            <li>BOURGOGNES</li>
+                        </ul>
+                        <img src="./img/domains/lamy-pillot.png" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>Domaine Nathalie & Gilles Fevre</h2>
+                        <ul>
+                            <li>CHABLIS</li>
+                        </ul>
+                        <img
+                            src="./img/domains/nathalie-gilles-fevre.jpg"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="domain">
+                        <h2>Domaine Devillard</h2>
+                        <ul>
+                            <li>MERCUREY</li>
+                            <li>GIVRY</li>
+                            <li>NUITS SAINT GEORGES</li>
+                        </ul>
+                        <img src="./img/domains/chateau-chamirey.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>Domaine Saint Amant</h2>
+                        <ul>
+                            <li>BEAUMES-DE-VENISE</li>
+                        </ul>
+                        <img
+                            src="./img/domains/domaine-saint-amant.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <div class="languedoc invisible region">
+                    <div class="domain">
+                        <h2>CHATEAU PUECH-HAUT</h2>
+                        <ul>
+                            <li>LANGUEDOC</li>
+                        </ul>
+                        <img
+                            src="./img/domains/chateau-puech-haut.jpg"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE SAINTE LEOCADIE</h2>
+                        <ul>
+                            <li>MINERVOIS</li>
+                        </ul>
+                        <img
+                            src="./img/domains/Domaine_St_Leocadie.jpg"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE DE LA CENDRILLON</h2>
+                        <ul>
+                            <li>IGP & AOP CORBIERES</li>
+                        </ul>
+                        <img
+                            src="./img/domains/domaine-cendrillon.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <div class="loire invisible region">
+                    <div class="domain">
+                        <h2>MAISON LAPORTE</h2>
+                        <ul>
+                            <li>SANCERRE</li>
+                            <li>POUILLY-FUME</li>
+                        </ul>
+                        <img src="./img/domains/maison-laporte.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINES TATIN</h2>
+                        <ul>
+                            <li>QUINCY</li>
+                            <li>REUILLY</li>
+                        </ul>
+                        <img src="./img/domains/domaine-tatin.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE MAISON & FILS</h2>
+                        <ul>
+                            <li>CHEVERNY</li>
+                        </ul>
+                        <img src="./img/domains/domaine-maison.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>PASCAL & ALAIN LORIEUX</h2>
+                        <ul>
+                            <li>ST NICOLAS DE BOURGUEIL</li>
+                            <li>CHINON</li>
+                        </ul>
+                        <img src="./img/domains/lorieux.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE FILLIATREAU</h2>
+                        <ul>
+                            <li>SAUMUR CHAMPIGNY</li>
+                            <li>SAUMUR</li>
+                        </ul>
+                        <img
+                            src="./img/domains/domaine-filliatreau.jpg"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE PIERRE LUNEAU-PAPIN</h2>
+                        <ul>
+                            <li>MUSCADET</li>
+                        </ul>
+                        <img
+                            src="./img/domains/domaine-luneau-papin.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let map = am4core.create('chartdiv', am4maps.MapChart)
+            map.geodata = am4geodata_franceHigh
+            map.projection = new am4maps.projections.Mercator()
+            let polygonSeries = new am4maps.MapPolygonSeries()
+            polygonSeries.useGeodata = true
+            map.series.push(polygonSeries)
+            // Populate series data
+            let polygonTemplate = polygonSeries.mapPolygons.template
+            polygonTemplate.tooltipText = '{name}'
+            polygonTemplate.fill = am4core.color('#74B266')
+            // Hover state
+            let hs = polygonTemplate.states.create('hover')
+            hs.properties.fill = am4core.color('#633640')
+            polygonTemplate.propertyFields.fill = 'fill'
+            // Disabled zoom
+            map.seriesContainer.draggable = false
+            map.seriesContainer.resizable = false
+            map.maxZoomLevel = 1
+            map.seriesContainer.events.disableType('doublehit')
+            map.chartContainer.background.events.disableType('doublehit')
+            // Enabled scroll through
+            map.chartContainer.wheelable = false
+            // Custom legends
+            polygonTemplate.events.on('hit', function (ev) {
+                const region = document.querySelector('.regionH1')
+                let regionID = ev.target.dataItem.dataContext.name
+                region.innerText = regionID
+                const grandEst = document.querySelector('.grand-est')
+                const auvergne = document.querySelector('.auvergne')
+                if (regionID == 'Grand Est') {
+                    hideRegions()
+                    grandEst.classList.remove('invisible')
+                } else if (regionID == 'Auvergne-Rhône-Alpes') {
+                    hideRegions()
+                    auvergne.classList.remove('invisible')
+                } else if (regionID == 'Bourgogne-Franche-Comté') {
+                    hideRegions()
+                    const bourgogne = document.querySelector('.bourgogne')
+                    bourgogne.classList.remove('invisible')
+                } else if (regionID == 'Nouvelle-Aquitaine') {
+                    hideRegions()
+                    const aquitaine = document.querySelector(
+                        '.nouvelle-aquitaine'
+                    )
+                    aquitaine.classList.remove('invisible')
+                } else if (regionID == 'Occitanie') {
+                    hideRegions()
+                    const occitanie = document.querySelector('.languedoc')
+                    occitanie.classList.remove('invisible')
+                } else if (regionID == 'Pays de la Loire') {
+                    hideRegions()
+                    const loire = document.querySelector('.loire')
+                    loire.classList.remove('invisible')
+                } else {
+                    hideRegions()
+                }
+            })
+
+            function hideRegions() {
+                const regions = document.querySelectorAll('.region')
+                for (const elem of regions) {
+                    elem.classList.add('invisible')
+                }
+            }
+        </script>
+
+        <footer>
+            <p>Copyright © 2014 - Maison Dinard & Fils SAS -</p>
+            <p>
+                +33 (0)6 51 49 08 39 -
+                <a href="mailto:pierrick.dinard@maisondinard.fr"
+                    >Nous contacter par email</a
+                >
+            </p>
+        </footer>
+    </body>
+</html>
