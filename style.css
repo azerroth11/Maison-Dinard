@@ -11,6 +11,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
     background-color: var(--main);
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Commons */
@@ -39,9 +40,62 @@ i {
 
 /* Javascript */
 .invisible {
-    visibility: hidden;
+    display: none !important;
     position: absolute;
-    display: none;
+}
+
+.domainsMobile {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    max-width: 1265px;
+    margin: 10vh auto;
+    gap: 2rem;
+}
+
+.regionDiv {
+    margin: 0 auto;
+}
+
+.regionDiv:first-child {
+    grid-row: 1 / span 3;
+}
+
+.regionDiv:nth-child(5) {
+    grid-row: 4 / span 5;
+}
+
+.regionDiv div {
+    width: 375px;
+    height: 175px;
+    position: relative;
+    border: 1px solid #fff;
+}
+
+.regionDiv div h2 {
+    font-size: 1.3rem;
+    position: absolute;
+    color: #fff;
+    top: 1rem;
+    left: 0.5rem;
+    z-index: 100;
+}
+
+.regionDiv div ul {
+    position: absolute;
+    color: #fff;
+    top: 3rem;
+    left: 2rem;
+    z-index: 100;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.regionDiv img {
+    height: 175px;
+    object-fit: cover;
+    width: 100%;
+    filter: brightness(40%);
 }
 
 /* Nav */
@@ -121,11 +175,11 @@ i:hover {
 
 /* Beverage Choice */
 .beverage-choice {
-    max-width: 800px;
+    max-width: 1200px;
+    max-height: 700px;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
-    margin-top: 5vh;
+    margin: 10% auto;
     gap: 1rem;
 }
 
@@ -136,6 +190,8 @@ i:hover {
     display: grid;
     place-items: center;
     position: relative;
+    transition: all 0.5s ease;
+    transform: rotate(45deg);
 }
 
 .beverage-choice div a {
@@ -145,18 +201,21 @@ i:hover {
     display: grid;
     place-items: center;
     color: #000;
-    transition: all 0.5s ease;
-    transform: rotate(45deg);
+    padding: 1rem;
 }
 
 .beverage-choice div:hover {
     transition: all 0.5s ease;
-    transform: rotate(45deg);
+    transform: rotate(90deg);
 }
 
 .beverage-choice div a h1 {
     position: absolute;
-    transform: rotate(-90deg) translateY(60px);
+    transform: rotate(-90deg) translateY(35px);
+}
+
+.beverage-choice .whiskies a h1 {
+    transform: rotate(-90deg) translateY(45px);
 }
 
 /* Map + Legend */
@@ -164,6 +223,7 @@ i:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 90vh;
+    overflow: hidden;
 }
 
 /* Map */
@@ -179,7 +239,6 @@ i:hover {
     text-align: center;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
     box-shadow: 2px 3px 20px rgba(0, 0, 0, 1);
-    /* overflow: hidden; */
 }
 
 .legend h1 {

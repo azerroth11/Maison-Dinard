@@ -65,10 +65,39 @@ function hideRegions() {
     }
 }
 
+// Domains and their varieties
+const body = document.querySelector('body')
+const footer = document.querySelector('footer')
 const beverageSection = document.querySelector('.beverage-choice')
 const mapSection = document.querySelector('.map')
 const wine = document.querySelector('.vins')
+
 wine.addEventListener('click', () => {
     beverageSection.classList.add('invisible')
-    mapSection.classList.remove('invisible')
+    if (window.innerWidth < 1850) {
+        const sectionMobile = body.insertBefore(
+            document.createElement('section'),
+            footer
+        )
+        sectionMobile.classList.add('domainsMobile')
+        const regionsList = document.querySelectorAll('.region')
+        regionsList.forEach(e => {
+            const regionDiv = sectionMobile.appendChild(
+                document.createElement('div')
+            )
+            regionDiv.classList.add('regionDiv')
+            let regionH1 = regionDiv.appendChild(document.createElement('h1'))
+            regionH1.innerHTML = e.id
+            let domainList = e.children
+            domainList.forEach(i => {
+                let domain = regionDiv.appendChild(
+                    document.createElement('div')
+                )
+                domain.insertAdjacentHTML('beforeend', i.innerHTML)
+            })
+        })
+    } else {
+        const map = document.querySelector('.map')
+        map.classList.remove('invisible')
+    }
 })
