@@ -9,14 +9,44 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-        <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-        <script src="//cdn.amcharts.com/lib/4/maps.js"></script>
-        <script src="./franceHigh.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/core.js" defer></script>
+        <script src="//cdn.amcharts.com/lib/4/maps.js" defer></script>
+        <script src="./franceHigh.js" defer></script>
+        <script src="./script.js" defer></script>
         <title>Maison Dinard & Fils - Notre Selection</title>
     </head>
-    <body class="map-body">
-        <nav><img src="./img/logo-transparent.png" alt="logo" /></nav>
-        <section class="map">
+
+    <body>
+        <nav>
+            <a href="./index.html"
+                ><img src="./img/logo-transparent.png" alt="logo"
+            /></a>
+        </nav>
+
+        <section class="beverage-choice">
+            <div class="vins">
+                <a href="#">
+                    <img src="./img/winebottle.svg" alt="" />
+                    <h1>Vins</h1>
+                </a>
+            </div>
+
+            <div class="champagnes">
+                <a href="#">
+                    <img src="./img/champagnebottle.svg" alt="" />
+                    <h1>Champagnes</h1>
+                </a>
+            </div>
+
+            <div class="whiskies">
+                <a href="#">
+                    <img src="./img/whiskeybottle.svg" alt="" />
+                    <h1>Whiskies</h1>
+                </a>
+            </div>
+        </section>
+
+        <section class="map invisible">
             <div id="chartdiv"></div>
             <div class="legend">
                 <h1 class="regionH1">
@@ -40,6 +70,78 @@
                             <li>MORGON</li>
                             <li>BEAUJOLAIS</li>
                             <li>BOURGOGNE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE FAURY</h2>
+                        <ul>
+                            <li>COTE-ROTIE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE YANN CHAVE</h2>
+                        <ul>
+                            <li>CROZES HERMITAGE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE DE BEAURENARD</h2>
+                        <ul>
+                            <li>CHATEAUNEUF DU PAPE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE DE MONTVAC</h2>
+                        <ul>
+                            <li>VACQUEYRAS</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE DE LA GUICHARDE</h2>
+                        <ul>
+                            <li>COTES DU RHONE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE DE LA TOURADE</h2>
+                        <ul>
+                            <li>COTES DU RHONE VILLAGE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>DOMAINE FRANCOIS VILLARD</h2>
+                        <ul>
+                            <li>LES RHONES NORD</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>CUILLERON GAILLARD VILLARD</h2>
+                        <ul>
+                            <li>LES VINS DE VIENNE</li>
+                        </ul>
+                        <img src="./img/domains/chateau-pizay.jpg" alt="" />
+                    </div>
+
+                    <div class="domain">
+                        <h2>CHATEAU MAS NEUF</h2>
+                        <ul>
+                            <li>COSTIERES DE NIMES</li>
                         </ul>
                         <img src="./img/domains/chateau-pizay.jpg" alt="" />
                     </div>
@@ -226,75 +328,28 @@
                         />
                     </div>
                 </div>
+
+                <div class="provence invisible region">
+                    <div class="domain">
+                        <h2>DOMAINE DE LA BEGUDE</h2>
+                        <ul>
+                            <li>Bandol AOC</li>
+                        </ul>
+                        <img src="./img/domains/domaine-begude.jpg" alt="" />
+                    </div>
+                    <div class="domain">
+                        <h2>CHATEAU PAS DU CERF</h2>
+                        <ul>
+                            <li>AOP Côtes de Provence</li>
+                        </ul>
+                        <img
+                            src="./img/domains/chateau-pas-du-cerf.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
             </div>
         </section>
-
-        <script>
-            let map = am4core.create('chartdiv', am4maps.MapChart)
-            map.geodata = am4geodata_franceHigh
-            map.projection = new am4maps.projections.Mercator()
-            let polygonSeries = new am4maps.MapPolygonSeries()
-            polygonSeries.useGeodata = true
-            map.series.push(polygonSeries)
-            // Populate series data
-            let polygonTemplate = polygonSeries.mapPolygons.template
-            polygonTemplate.tooltipText = '{name}'
-            polygonTemplate.fill = am4core.color('#74B266')
-            // Hover state
-            let hs = polygonTemplate.states.create('hover')
-            hs.properties.fill = am4core.color('#633640')
-            polygonTemplate.propertyFields.fill = 'fill'
-            // Disabled zoom
-            map.seriesContainer.draggable = false
-            map.seriesContainer.resizable = false
-            map.maxZoomLevel = 1
-            map.seriesContainer.events.disableType('doublehit')
-            map.chartContainer.background.events.disableType('doublehit')
-            // Enabled scroll through
-            map.chartContainer.wheelable = false
-            // Custom legends
-            polygonTemplate.events.on('hit', function (ev) {
-                const region = document.querySelector('.regionH1')
-                let regionID = ev.target.dataItem.dataContext.name
-                region.innerText = regionID
-                const grandEst = document.querySelector('.grand-est')
-                const auvergne = document.querySelector('.auvergne')
-                if (regionID == 'Grand Est') {
-                    hideRegions()
-                    grandEst.classList.remove('invisible')
-                } else if (regionID == 'Auvergne-Rhône-Alpes') {
-                    hideRegions()
-                    auvergne.classList.remove('invisible')
-                } else if (regionID == 'Bourgogne-Franche-Comté') {
-                    hideRegions()
-                    const bourgogne = document.querySelector('.bourgogne')
-                    bourgogne.classList.remove('invisible')
-                } else if (regionID == 'Nouvelle-Aquitaine') {
-                    hideRegions()
-                    const aquitaine = document.querySelector(
-                        '.nouvelle-aquitaine'
-                    )
-                    aquitaine.classList.remove('invisible')
-                } else if (regionID == 'Occitanie') {
-                    hideRegions()
-                    const occitanie = document.querySelector('.languedoc')
-                    occitanie.classList.remove('invisible')
-                } else if (regionID == 'Pays de la Loire') {
-                    hideRegions()
-                    const loire = document.querySelector('.loire')
-                    loire.classList.remove('invisible')
-                } else {
-                    hideRegions()
-                }
-            })
-
-            function hideRegions() {
-                const regions = document.querySelectorAll('.region')
-                for (const elem of regions) {
-                    elem.classList.add('invisible')
-                }
-            }
-        </script>
 
         <footer>
             <p>Copyright © 2014 - Maison Dinard & Fils SAS -</p>

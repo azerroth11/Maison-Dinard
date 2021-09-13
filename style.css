@@ -15,10 +15,10 @@ html {
 
 body {
     font-family: Helvetica, sans-serif;
-}
-
-.map-body {
     background-color: var(--main);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Commons */
@@ -34,12 +34,14 @@ a {
 
 i {
     cursor: pointer;
+    font-size: 48px;
 }
 
 /* Javascript */
 .invisible {
     visibility: hidden;
     position: absolute;
+    display: none;
 }
 
 /* Nav */
@@ -49,6 +51,14 @@ nav {
     background-color: var(--main);
     display: grid;
     place-items: center;
+    overflow: visible;
+    position: sticky;
+    z-index: 100;
+    text-align: center;
+}
+
+nav a img {
+    width: 75%;
 }
 
 /* Hero */
@@ -78,9 +88,17 @@ nav {
     border-radius: -50px;
 }
 
+.hero .nous {
+    color: var(--accent);
+}
+
 .hero i {
+    position: absolute;
+    bottom: -14vh;
+    left: 50%;
     font-size: 48px;
     padding: 2rem;
+    transform: translateX(-50%);
 }
 
 .hero .shop {
@@ -97,14 +115,55 @@ i:hover {
     }
 
     50% {
-        transform: translateY(10px);
+        transform: translate(-50%, 15px);
     }
+}
+
+/* Beverage Choice */
+.beverage-choice {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 5vh;
+    gap: 1rem;
+}
+
+.beverage-choice div {
+    height: 22vh;
+    width: 250px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.beverage-choice div a {
+    height: 25vh;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    color: #000;
+    transition: all 0.5s ease;
+    transform: rotate(45deg);
+}
+
+.beverage-choice div:hover {
+    transition: all 0.5s ease;
+    transform: rotate(45deg);
+}
+
+.beverage-choice div a h1 {
+    position: absolute;
+    transform: rotate(-90deg) translateY(60px);
 }
 
 /* Map + Legend */
 .map {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 90vh;
 }
 
 /* Map */
@@ -138,7 +197,7 @@ i:hover {
 }
 
 .legend .region .domain {
-    min-width: 460px;
+    width: 460px;
     position: relative;
     border: 1px solid #fff;
     flex-grow: 1;
@@ -178,4 +237,5 @@ footer {
     place-items: center;
     width: 100%;
     background-color: var(--main);
+    height: 8vh;
 }
