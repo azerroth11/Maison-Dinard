@@ -216,26 +216,35 @@ i:hover {
 
 .beverage-choice div a {
     height: 30vh;
-    width: 100%;
     margin: auto;
     display: grid;
     place-items: center;
     color: #000;
-    padding: 1rem;
 }
 
-.beverage-choice div a img {
-    height: 100%;
-    width: 100%;
+.beverage-choice img {
+    width: 320px;
+    height: 280px;
 }
 
 .beverage-choice div a h1 {
+    color: #fff;
     position: absolute;
-    transform: rotate(-90deg) translateY(35px);
+    z-index: 100;
+    transform: rotate(-90deg);
+    font-size: 2rem;
 }
 
-.beverage-choice .whiskies a h1 {
-    transform: rotate(-90deg) translateY(45px);
+.beverage-choice .vins h1 {
+    transform: rotate(-90deg) translate(-30px, 0px);
+}
+
+.beverage-choice .champagnes h1 {
+    transform: rotate(-90deg) translate(0px, -4px);
+}
+
+.beverage-choice .whiskies h1 {
+    transform: rotate(-90deg) translate(-30px, 0px);
 }
 
 /* Map + Legend */
