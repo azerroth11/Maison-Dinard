@@ -156,6 +156,7 @@ i:hover {
 .agency .carte img {
     border-radius: 5px;
     max-width: 325px;
+    object-fit: contain;
 }
 
 /* Vins */
