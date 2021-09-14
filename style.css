@@ -120,7 +120,7 @@ i:hover {
 
 /* Agency */
 .agency {
-    margin: 165px auto 8vh auto;
+    margin: 185px auto 8vh auto;
     max-width: 1200px;
     padding: 0 2rem;
 }
@@ -156,6 +156,7 @@ i:hover {
 .agency .carte img {
     border-radius: 5px;
     max-width: 325px;
+    max-height: 435px;
     object-fit: contain;
 }
 
@@ -199,7 +200,7 @@ i:hover {
 
 .beverage-choice div {
     height: 22vh;
-    width: 250px;
+    max-width: 350px;
     margin: auto;
     display: grid;
     place-items: center;
@@ -208,8 +209,13 @@ i:hover {
     transform: rotate(45deg);
 }
 
+.beverage-choice div:hover {
+    transition: all 0.5s ease;
+    transform: rotate(90deg);
+}
+
 .beverage-choice div a {
-    height: 25vh;
+    height: 30vh;
     width: 100%;
     margin: auto;
     display: grid;
@@ -218,9 +224,9 @@ i:hover {
     padding: 1rem;
 }
 
-.beverage-choice div:hover {
-    transition: all 0.5s ease;
-    transform: rotate(90deg);
+.beverage-choice div a img {
+    height: 100%;
+    width: 100%;
 }
 
 .beverage-choice div a h1 {
@@ -236,8 +242,9 @@ i:hover {
 .map {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
+    place-items: center;
 }
 
 /* Map */
@@ -259,7 +266,6 @@ i:hover {
     background-color: var(--accent);
     color: #fff;
     padding: 0.75rem;
-    height: 50px;
 }
 
 .legend .region {
@@ -277,9 +283,10 @@ i:hover {
 }
 
 .legend .region .domain h2 {
+    font-size: 1.3rem;
     position: absolute;
     color: #fff;
-    top: 1rem;
+    top: 0.25rem;
     left: 1rem;
     z-index: 100;
 }
@@ -287,16 +294,16 @@ i:hover {
 .legend .region .domain ul {
     position: absolute;
     color: #fff;
-    top: 3rem;
-    left: 3rem;
+    top: 1.85rem;
+    left: 5rem;
     z-index: 100;
     text-align: left;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 1.15rem;
+    line-height: 1.7rem;
 }
 
 .legend img {
-    height: 175px;
+    height: 120px;
     object-fit: cover;
     width: 100%;
     filter: brightness(40%);
