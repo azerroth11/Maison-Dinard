@@ -65,7 +65,7 @@ function hideRegions() {
     }
 }
 
-// Domains and their varieties
+// Wines selection
 const body = document.querySelector('body')
 const footer = document.querySelector('footer')
 const beverageSection = document.querySelector('.beverage-choice')
@@ -100,4 +100,11 @@ wine.addEventListener('click', () => {
         const map = document.querySelector('.map')
         map.classList.remove('invisible')
     }
+})
+
+// Champagnes selection
+const champagnes = document.querySelector('.champagnes')
+
+champagnes.addEventListener('click', () => {
+    beverageSection.classList.add('invisible')
 })
