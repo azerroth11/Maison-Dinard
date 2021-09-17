@@ -121,9 +121,13 @@ const discoverBillecart = document.querySelector('.discover-billecart')
 const billecartSelection = document.querySelector('.billecart-selection')
 
 discoverBillecart.addEventListener('click', () => {
-    billecartSelection.classList.toggle('invisible')
-    billecart.classList.add('blur')
-    drappier.classList.add('blur')
+    if (window.innerWidth > 960) {
+        billecartSelection.classList.toggle('invisible')
+        billecart.classList.add('blur')
+        drappier.classList.add('blur')
+    } else {
+        billecartSelection.classList.toggle('invisible')
+    }
 })
 
 // Display Drappier champagnes
@@ -131,15 +135,23 @@ const discoverDrappier = document.querySelector('.discover-drappier')
 const drappierSelection = document.querySelector('.drappier-selection')
 
 discoverDrappier.addEventListener('click', e => {
-    drappierSelection.classList.toggle('invisible')
+    if (window.innerWidth > 960) {
+        drappierSelection.classList.toggle('invisible')
+        billecart.classList.add('blur')
+        drappier.classList.add('blur')
+    } else {
+        drappierSelection.classList.toggle('invisible')
+    }
 })
 
 // Close BTN
-const closeBTN = document.querySelector('.close-btn')
+const closeBTN = document.querySelectorAll('.close-btn')
 
-closeBTN.addEventListener('click', e => {
-    billecartSelection.classList.add('invisible')
-    drappierSelection.classList.add('invisible')
-    billecart.classList.remove('blur')
-    drappier.classList.remove('blur')
+closeBTN.forEach(e => {
+    e.addEventListener('click', () => {
+        billecartSelection.classList.add('invisible')
+        drappierSelection.classList.add('invisible')
+        billecart.classList.remove('blur')
+        drappier.classList.remove('blur')
+    })
 })

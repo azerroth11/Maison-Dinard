@@ -59,7 +59,7 @@ nav {
     overflow: visible;
     position: absolute;
     top: 0;
-    z-index: 100;
+    z-index: 99;
     text-align: center;
 }
 
@@ -224,25 +224,24 @@ nav a img {
 }
 
 .beverage-choice img {
-    max-width: 320px;
-    height: 280px;
+    max-width: 150px;
     object-fit: contain;
 }
 
 .beverage-choice div a h1 {
     color: #000;
     position: absolute;
-    z-index: 100;
-    transform: rotate(-90deg) translate(0px, 50px);
+    z-index: 2;
+    transform: rotate(-90deg) translate(0px, 45px);
     font-size: 2rem;
 }
 
 .beverage-choice .vins h1 {
-    transform: rotate(-90deg) translate(-20px, 50px);
+    transform: rotate(-90deg) translate(-20px, 42px);
 }
 
 .beverage-choice .whiskies h1 {
-    transform: rotate(-90deg) translate(-40px, 70px);
+    transform: rotate(-90deg) translate(-30px, 60px);
 }
 
 /* Champagne section */
@@ -253,6 +252,7 @@ nav a img {
     gap: 6rem;
     flex-wrap: wrap;
     place-self: center;
+    place-content: center;
     max-width: 1920px;
 }
 
@@ -291,7 +291,8 @@ nav a img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2.5rem 1rem;
+    gap: 2rem 1rem;
+    justify-content: center;
     margin-bottom: 2rem;
 }
 
@@ -302,38 +303,57 @@ nav a img {
     line-height: 1.6;
 }
 
-.billecart-selection {
+.billecart-selection,
+.drappier-selection {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 25px;
     padding: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+    position: relative;
+    text-align: center;
 }
 
-.billecart-selection div {
+.billecart-selection > div,
+.drappier-selection > div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.billecart-selection div h1 {
-    position: absolute;
+.billecart-selection div div,
+.drappier-selection div div {
+    margin-bottom: 2rem;
 }
 
-.billecart-selection img {
-    max-width: 225px;
+.billecart-selection > div img {
+    max-width: 190px;
+    margin-bottom: -1rem;
+}
+
+.drappier-selection > div img {
+    max-height: 210px;
+    padding: 0 4rem;
+}
+
+.cuvees {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+.millesime {
+    margin-top: 2rem;
 }
 
 .close-btn {
-    display: flex;
-    place-items: center;
-    gap: 0.5rem;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 0.5rem;
     right: 1rem;
+    cursor: pointer;
+    gap: 0.1rem !important;
 }
 
 /* Map + Legend */
@@ -386,7 +406,7 @@ nav a img {
     color: #fff;
     top: 0.25rem;
     left: 1rem;
-    z-index: 100;
+    z-index: 2;
 }
 
 .legend .region .domain ul {
@@ -394,7 +414,7 @@ nav a img {
     color: #fff;
     top: 1.85rem;
     left: 5rem;
-    z-index: 100;
+    z-index: 2;
     text-align: left;
     font-size: 1.15rem;
     line-height: 1.7rem;
@@ -411,7 +431,6 @@ nav a img {
 .domainsMobile {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-    max-width: 1265px;
     margin: 25vh auto 6vh auto;
     gap: 2rem;
 }
@@ -447,7 +466,7 @@ nav a img {
     color: #fff;
     top: 1rem;
     left: 0.5rem;
-    z-index: 100;
+    z-index: 2;
 }
 
 .regionDiv div ul {
@@ -455,7 +474,7 @@ nav a img {
     color: #fff;
     top: 3rem;
     left: 2rem;
-    z-index: 100;
+    z-index: 2;
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.8rem;
@@ -478,4 +497,66 @@ footer {
     height: 6vh;
     color: #fff;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+@media screen and (min-width: 1080px) {
+    .beverage-choice .vins a h1 {
+        transform: rotate(-90deg) translate(-30px, 55px);
+    }
+
+    .beverage-choice .champagnes a h1 {
+        transform: rotate(-90deg) translate(-20px, 55px);
+    }
+
+    .beverage-choice .whiskies a h1 {
+        transform: rotate(-90deg) translate(-40px, 70px);
+    }
+
+    .billecart-selection,
+    .drappier-selection {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 25px;
+        padding: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        z-index: 2;
+    }
+
+    .billecart-selection > div,
+    .drappier-selection > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .drappier-selection > div > div {
+        min-width: 250px !important;
+    }
+
+    .billecart-selection img,
+    .drappier-selection img {
+        max-width: 190px;
+        max-height: 210px;
+        cursor: pointer;
+    }
+
+    .billecart-selection div div,
+    .drappier-selection div div {
+        margin-bottom: 0rem;
+    }
+
+    .billecart-selection > div > div > h1,
+    .drappier-selection > div > div > h1 {
+        text-align: center;
+    }
+
+    .cuvees,
+    .millesime {
+        margin-top: 0;
+        background-color: rgba(255, 255, 255, 0);
+    }
 }
