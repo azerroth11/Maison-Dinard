@@ -21,6 +21,7 @@ body {
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
+    display: grid;
 }
 
 /* Commons */
@@ -228,23 +229,84 @@ i:hover {
 }
 
 .beverage-choice div a h1 {
-    color: #fff;
+    color: #000;
     position: absolute;
     z-index: 100;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translate(0px, 70px);
     font-size: 2rem;
 }
 
 .beverage-choice .vins h1 {
-    transform: rotate(-90deg) translate(-30px, 0px);
-}
-
-.beverage-choice .champagnes h1 {
-    transform: rotate(-90deg) translate(0px, -4px);
+    transform: rotate(-90deg) translate(-20px, 60px);
 }
 
 .beverage-choice .whiskies h1 {
-    transform: rotate(-90deg) translate(-30px, 0px);
+    transform: rotate(-90deg) translate(-40px, 80px);
+}
+
+/* Champagne section */
+.champagne {
+    margin: 25vh 0 8vh 0;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    place-self: center;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.champagne .billecart,
+.champagne .drappier {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 50ch;
+    margin: 0 auto;
+}
+
+.champagne p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.champagne img {
+    max-height: 300px;
+}
+
+.champagne .billecart {
+    transform: translateY(-5%);
+}
+
+.champagne a {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background-color: var(--accent);
+    border-radius: 5px;
+    width: 325px;
+    margin: 0 auto;
+}
+
+/* Champagne - Billecart */
+.billecart-selection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 540px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.billecart-selection h1 {
+    position: absolute;
+    width: 350px;
+    top: -2rem;
+    font-size: 2rem;
+}
+
+.billecart-selection .millesime h1 {
+    left: -2.5rem;
 }
 
 /* Map + Legend */

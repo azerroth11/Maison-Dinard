@@ -104,7 +104,27 @@ wine.addEventListener('click', () => {
 
 // Champagnes selection
 const champagnes = document.querySelector('.champagnes')
+const champagne = document.querySelector('.champagne')
+const billecart = document.querySelector('.billecart')
+const drappier = document.querySelector('.drappier')
 
+// Display champagne houses intro
 champagnes.addEventListener('click', () => {
     beverageSection.classList.add('invisible')
+    champagne.classList.remove('invisible')
+    billecart.classList.remove('invisible')
+    drappier.classList.remove('invisible')
 })
+
+// Display Billecart champagnes
+const discoverBillecart = document.querySelector('.discover-billecart')
+const billecartSelection = document.querySelectorAll('.billecart-selection')
+
+discoverBillecart.addEventListener('click', () => {
+    billecartSelection.forEach(e => {
+        e.classList.toggle('invisible')
+    })
+})
+
+// Display Drappier champagnes
+const discoverDrappier = document.querySelector('.discover-drappier')
