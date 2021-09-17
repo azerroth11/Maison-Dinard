@@ -46,6 +46,10 @@ i {
     position: absolute;
 }
 
+.blur {
+    filter: opacity(0.05);
+}
+
 /* Nav */
 nav {
     height: 10vh;
@@ -104,10 +108,6 @@ nav a img {
 .hero .shop {
     background-color: var(--accent);
     color: #fff;
-}
-
-i:hover {
-    animation: shake 1s infinite;
 }
 
 @keyframes shake {
@@ -187,7 +187,7 @@ i:hover {
 
 /* Beverage Choice */
 .beverage-choice {
-    max-width: 1200px;
+    width: clamp(150px, 75%, 1200px);
     max-height: 700px;
     display: flex;
     flex-wrap: wrap;
@@ -224,57 +224,41 @@ i:hover {
 }
 
 .beverage-choice img {
-    width: 320px;
+    max-width: 320px;
     height: 280px;
+    object-fit: contain;
 }
 
 .beverage-choice div a h1 {
     color: #000;
     position: absolute;
     z-index: 100;
-    transform: rotate(-90deg) translate(0px, 70px);
+    transform: rotate(-90deg) translate(0px, 50px);
     font-size: 2rem;
 }
 
 .beverage-choice .vins h1 {
-    transform: rotate(-90deg) translate(-20px, 60px);
+    transform: rotate(-90deg) translate(-20px, 50px);
 }
 
 .beverage-choice .whiskies h1 {
-    transform: rotate(-90deg) translate(-40px, 80px);
+    transform: rotate(-90deg) translate(-40px, 70px);
 }
 
 /* Champagne section */
 .champagne {
-    margin: 25vh 0 8vh 0;
+    margin: 8vh 0;
     padding: 2rem;
     display: flex;
+    gap: 6rem;
     flex-wrap: wrap;
     place-self: center;
-    width: 100%;
     max-width: 1920px;
-}
-
-.champagne .billecart,
-.champagne .drappier {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 50ch;
-    margin: 0 auto;
 }
 
 .champagne p {
     font-size: 1.1rem;
     line-height: 1.5;
-}
-
-.champagne img {
-    max-height: 300px;
-}
-
-.champagne .billecart {
-    transform: translateY(-5%);
 }
 
 .champagne a {
@@ -287,26 +271,69 @@ i:hover {
     margin: 0 auto;
 }
 
-/* Champagne - Billecart */
-.billecart-selection {
+/* Champagne - Intros */
+.billecart,
+.drappier {
+    display: grid;
+    max-width: 800px;
+}
+
+.billecart img,
+.drappier img {
+    align-self: center;
+    margin: 2rem;
+    max-width: 225px;
+    place-self: center;
+}
+
+.billecart-txt,
+.drappier-txt {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 540px;
-    position: relative;
-    margin: 0 auto;
-    margin-bottom: 5rem;
+    gap: 2.5rem 1rem;
+    margin-bottom: 2rem;
 }
 
-.billecart-selection h1 {
+.billecart-txt p,
+.drappier-txt p {
+    max-width: 40ch;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.billecart-selection {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 2rem;
     position: absolute;
-    width: 350px;
-    top: -2rem;
-    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
 }
 
-.billecart-selection .millesime h1 {
-    left: -2.5rem;
+.billecart-selection div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.billecart-selection div h1 {
+    position: absolute;
+}
+
+.billecart-selection img {
+    max-width: 225px;
+}
+
+.close-btn {
+    display: flex;
+    place-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
 }
 
 /* Map + Legend */

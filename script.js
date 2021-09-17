@@ -118,13 +118,28 @@ champagnes.addEventListener('click', () => {
 
 // Display Billecart champagnes
 const discoverBillecart = document.querySelector('.discover-billecart')
-const billecartSelection = document.querySelectorAll('.billecart-selection')
+const billecartSelection = document.querySelector('.billecart-selection')
 
 discoverBillecart.addEventListener('click', () => {
-    billecartSelection.forEach(e => {
-        e.classList.toggle('invisible')
-    })
+    billecartSelection.classList.toggle('invisible')
+    billecart.classList.add('blur')
+    drappier.classList.add('blur')
 })
 
 // Display Drappier champagnes
 const discoverDrappier = document.querySelector('.discover-drappier')
+const drappierSelection = document.querySelector('.drappier-selection')
+
+discoverDrappier.addEventListener('click', e => {
+    drappierSelection.classList.toggle('invisible')
+})
+
+// Close BTN
+const closeBTN = document.querySelector('.close-btn')
+
+closeBTN.addEventListener('click', e => {
+    billecartSelection.classList.add('invisible')
+    drappierSelection.classList.add('invisible')
+    billecart.classList.remove('blur')
+    drappier.classList.remove('blur')
+})
