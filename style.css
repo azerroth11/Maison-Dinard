@@ -26,6 +26,10 @@ body {
     display: grid;
 }
 
+#index {
+    overflow: hidden;
+}
+
 /* Commons */
 img {
     max-width: 100%;
@@ -67,7 +71,6 @@ nav {
 nav img {
     height: 175px;
     max-height: none;
-    cursor: pointer;
 }
 
 /* Hero */
@@ -226,6 +229,7 @@ nav img {
 
 .beverage-choice div img {
     max-width: 200px;
+    max-height: 210px;
 }
 
 /* Champagne section */
