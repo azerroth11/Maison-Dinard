@@ -67,7 +67,6 @@ nav {
 nav a img {
     height: 100%;
     object-fit: cover;
-    justify-content: flex-start;
 }
 
 /* Hero */
@@ -222,7 +221,6 @@ nav a img {
 
 .beverage-choice img {
     object-fit: contain;
-    justify-content: flex-start;
 }
 
 .beverage-choice div a h1 {
