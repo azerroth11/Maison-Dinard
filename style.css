@@ -13,7 +13,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
 }
 
 body {
@@ -21,7 +21,7 @@ body {
     background-color: var(--main);
     width: 100vw;
     min-height: 100vh;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
     overflow-x: hidden;
     display: grid;
 }
