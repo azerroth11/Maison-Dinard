@@ -20,6 +20,7 @@ body {
     background-color: var(--main);
     width: 100vw;
     min-height: 100vh;
+    height: -webkit-fill-available;
     overflow-x: hidden;
     display: grid;
 }
