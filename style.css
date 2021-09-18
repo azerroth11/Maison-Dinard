@@ -203,7 +203,7 @@ nav a img {
     display: grid;
     place-items: center;
     transition: all 0.5s ease;
-    /* transform: rotate(45deg); */
+    transform: rotate(45deg);
 }
 
 .beverage-choice div:hover {
