@@ -221,8 +221,8 @@ nav a img {
 }
 
 .beverage-choice img {
-    /* max-width: 150px; */
     object-fit: contain;
+    justify-content: flex-start;
 }
 
 .beverage-choice div a h1 {
