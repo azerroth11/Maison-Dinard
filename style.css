@@ -65,6 +65,7 @@ nav {
 
 nav a img {
     height: 100%;
+    object-fit: contain;
 }
 
 /* Hero */
