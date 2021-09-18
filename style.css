@@ -190,41 +190,40 @@ nav a img {
 /* Beverage Choice */
 .beverage-choice {
     width: clamp(150px, 75%, 1200px);
-    max-height: 75vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
 
 .beverage-choice div {
-    height: 22vh;
-    max-width: 350px;
-    margin: 0 auto;
+    height: 20vh;
+    margin-top: 2rem;
     display: grid;
+    place-self: center;
     place-items: center;
     transition: all 0.5s ease;
-    transform: rotate(45deg);
+    transform: rotate(90deg);
 }
 
 .beverage-choice div:hover {
     transition: all 0.5s ease;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
+    cursor: pointer;
 }
 
 .beverage-choice div h1 {
     color: #000;
     position: absolute;
-    z-index: 2;
-    transform: rotate(-90deg) translate(0px, 45px);
+    transform: rotate(-90deg) translateY(135%);
     font-size: 2rem;
 }
 
-.beverage-choice .vins h1 {
-    transform: rotate(-90deg) translate(-20px, 42px);
+.beverage-choice .whiskies h1 {
+    transform: rotate(-90deg) translateY(165%);
 }
 
-.beverage-choice .whiskies h1 {
-    transform: rotate(-90deg) translate(-30px, 60px);
+.beverage-choice div img {
+    max-width: 200px;
 }
 
 /* Champagne section */
