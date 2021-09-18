@@ -64,9 +64,10 @@ nav {
     margin-bottom: -10vh;
 }
 
-nav a img {
-    height: 100%;
-    object-fit: cover;
+nav img {
+    height: 175px;
+    max-height: none;
+    cursor: pointer;
 }
 
 /* Hero */
