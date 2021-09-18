@@ -13,7 +13,6 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
-    /* height: -webkit-fill-available; */
 }
 
 body {
@@ -21,7 +20,6 @@ body {
     background-color: var(--main);
     width: 100vw;
     min-height: 100vh;
-    /* height: -webkit-fill-available; */
     overflow-x: hidden;
     display: grid;
 }
@@ -230,6 +228,7 @@ nav img {
 .beverage-choice div img {
     max-width: 200px;
     max-height: 210px;
+    transform: translateY(-25%);
 }
 
 /* Champagne section */
@@ -419,7 +418,7 @@ nav img {
 .domainsMobile {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-    margin: 25vh auto 6vh auto;
+    margin: 25vh auto 10vh auto;
     gap: 2rem;
 }
 
@@ -489,6 +488,7 @@ footer {
 }
 
 @media screen and (min-width: 1080px) {
+
     .beverage-choice .vins a h1 {
         transform: rotate(-90deg) translate(-30px, 55px);
     }
@@ -499,6 +499,10 @@ footer {
 
     .beverage-choice .whiskies a h1 {
         transform: rotate(-90deg) translate(-40px, 70px);
+    }
+
+    .beverage-choice div img {
+        transform: translateY(0);
     }
 
     .billecart-selection,
