@@ -193,7 +193,7 @@ nav a img {
     width: clamp(150px, 75%, 1200px);
     max-height: 75vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 0 auto;
 }
 
