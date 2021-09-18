@@ -190,6 +190,7 @@ nav a img {
 /* Beverage Choice */
 .beverage-choice {
     width: clamp(150px, 75%, 1200px);
+    max-height: 75vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
