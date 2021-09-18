@@ -24,6 +24,7 @@ body {
     height: -webkit-fill-available;
     overflow-x: hidden;
     display: grid;
+    position: relative;
 }
 
 /* Commons */
