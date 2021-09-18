@@ -211,19 +211,7 @@ nav a img {
     transform: rotate(90deg);
 }
 
-.beverage-choice div a {
-    height: 30vh;
-    margin: auto;
-    display: grid;
-    place-items: center;
-    color: #000;
-}
-
-.beverage-choice img {
-    object-fit: contain;
-}
-
-.beverage-choice div a h1 {
+.beverage-choice div h1 {
     color: #000;
     position: absolute;
     z-index: 2;
