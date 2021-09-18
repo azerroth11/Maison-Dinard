@@ -66,8 +66,8 @@ nav {
 }
 
 nav a img {
-    height: 100%;
-    object-fit: contain;
+    height: 16vh;
+    justify-content: flex-start;
 }
 
 /* Hero */
