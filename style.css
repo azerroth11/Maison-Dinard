@@ -409,6 +409,13 @@ nav img {
     padding: 0.5rem;
 }
 
+.mapOverlay .fa-times {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: #fff;
+}
+
 .mapOverlay p {
     display: flex;
     align-items: center;

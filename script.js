@@ -194,7 +194,12 @@ polygonTemplate.events.on('hit', function (ev) {
     sectionMobileChoice.classList.add('blur')
     let clickedRegion = ev.target.dataItem.dataContext.name
     overlayH1.innerHTML = clickedRegion
-    // const closeBtnWine = document.createElement(<i class='fas fa-times'></i>)
+    const closeBtnWine = document.querySelector('.fa-times')
+    closeBtnWine.addEventListener('click', () => {
+        mapOverlay.classList.add('invisible')
+        sectionMap.classList.remove('blur')
+        sectionMobileChoice.classList.remove('blur')
+    })
     const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
     if (selectedRegion) {
         resetDomains()
