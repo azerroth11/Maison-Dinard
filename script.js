@@ -20,29 +20,18 @@ map.seriesContainer.events.disableType('doublehit')
 map.chartContainer.background.events.disableType('doublehit')
 // Enabled scroll through
 map.chartContainer.wheelable = false
-// Custom legends
-// polygonTemplate.events.on('hit', function (ev) {
-//     const region = document.querySelector('.regionH1')
-//     let regionID = ev.target.dataItem.dataContext.name
-//     region.innerText = regionID
-//     const grandEst = document.querySelector('.grand-est')
-//     const auvergne = document.querySelector('.auvergne')
-// })
 
-function hideRegions() {
-    const regions = document.querySelectorAll('.region')
-    for (const elem of regions) {
-        elem.classList.add('invisible')
-    }
-}
+const vinsSelection = document.querySelector('.vins')
+const sectionMap = document.querySelector('.map')
+const sectionMobileChoice = document.querySelector('.mobileChoice')
+vinsSelection.addEventListener('click', () => {
+    const beverageSection = document.querySelector('.beverage-choice')
+    beverageSection.classList.add('invisible')
+    sectionMap.classList.remove('invisible')
+    sectionMobileChoice.classList.remove('invisible')
+})
 
-// Wines selection
-const body = document.querySelector('body')
-const footer = document.querySelector('footer')
-const beverageSection = document.querySelector('.beverage-choice')
-const mapSection = document.querySelector('.map')
-const wine = document.querySelector('.vins')
-
+// DATA
 const auvergne = {
     id: 'Auvergne-Rhône-Alpes',
     domains: [
@@ -185,7 +174,6 @@ regionList.forEach(region => {
         domainList.push(domain.id)
     })
 })
-// console.log(domainList)
 
 // Create the cepagesList
 const cepagesList = []
@@ -197,12 +185,9 @@ regionList.forEach(region => {
     })
 })
 cepagesList.sort()
-// console.log(cepagesList)
 
 polygonTemplate.events.on('hit', function (ev) {
     const mapOverlay = document.querySelector('.mapOverlay')
-    const sectionMap = document.querySelector('.map')
-    const sectionMobileChoice = document.querySelector('.mobileChoice')
     const overlayH1 = document.querySelector('.overlayH1')
     mapOverlay.classList.remove('invisible')
     sectionMap.classList.add('blur')
@@ -210,14 +195,86 @@ polygonTemplate.events.on('hit', function (ev) {
     let clickedRegion = ev.target.dataItem.dataContext.name
     overlayH1.innerHTML = clickedRegion
     const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
-    selectedRegion.domains.forEach(e => {
-        const domainP = mapOverlay.insertBefore(
+    if (selectedRegion) {
+        resetDomains()
+        selectedRegion.domains.forEach(domain => {
+            const domainDiv = mapOverlay.insertBefore(
+                document.createElement('div'),
+                null
+            )
+            domainDiv.classList.add('domainDiv')
+            const domainP = domainDiv.insertBefore(
+                document.createElement('p'),
+                null
+            )
+            domainP.innerHTML = `${"<i class='fas fa-caret-down'></i>"} ${
+                domain.id
+            }`
+            createDomainList(domain, domainDiv, domainP)
+        })
+    } else {
+        resetDomains()
+        const domainDiv = mapOverlay.insertBefore(
+            document.createElement('div'),
+            null
+        )
+        domainDiv.classList.add('domainDiv')
+        const domainP = domainDiv.insertBefore(
             document.createElement('p'),
             null
         )
-        domainP.innerHTML = `${"<i class='fas fa-caret-down'></i>"} ${e.id}`
-    })
+        domainP.innerText = 'Pas de domaines représentés dans cette région !'
+    }
 })
+
+// Used when user clicks on a region without domains
+function resetDomains() {
+    const domainsDivList = document.querySelectorAll('.domainDiv')
+    domainsDivList.forEach(e => {
+        e.remove()
+    })
+}
+
+function resetCepages() {
+    const cepagesDivList = document.querySelectorAll('.cepagesInnerDiv')
+    cepagesDivList.forEach(e => {
+        e.parentNode.remove()
+    })
+    const domainDivList = document.querySelectorAll('.domainDiv')
+    domainDivList.forEach(e => {
+        e.firstChild.firstChild.style.rotate = '0deg'
+    })
+}
+
+// Create domains div
+function createDomainList(domain, domainDiv, domainP) {
+    domainP.addEventListener('click', () => {
+        const cepagesDiv = domainDiv.insertBefore(
+            document.createElement('div'),
+            null
+        )
+        cepagesDiv.classList.add('cepagesDiv')
+        resetCepages()
+        domainDiv.firstChild.firstChild.style.rotate = '-90deg'
+        createCepagesList(domain, cepagesDiv)
+    })
+}
+
+// Create cepages div
+function createCepagesList(domain, cepagesDiv) {
+    domain.cepages.forEach(cepage => {
+        const cepagesInnerDiv = cepagesDiv.insertBefore(
+            document.createElement('div'),
+            null
+        )
+        cepagesInnerDiv.classList.add('cepagesInnerDiv')
+        const cepagesInnerDivP = cepagesInnerDiv.insertBefore(
+            document.createElement('p'),
+            null
+        )
+        cepagesInnerDivP.innerHTML = cepage
+    })
+}
 
 // Champagnes selection
 const champagnes = document.querySelector('.champagnes')
@@ -227,6 +284,7 @@ const drappier = document.querySelector('.drappier')
 
 // Display champagne houses intro
 champagnes.addEventListener('click', () => {
+    const beverageSection = document.querySelector('.beverage-choice')
     beverageSection.classList.add('invisible')
     champagne.classList.remove('invisible')
     billecart.classList.remove('invisible')
