@@ -37,43 +37,56 @@ const auvergne = {
     domains: [
         {
             id: 'CHATEAU DE PIZAY',
-            cepages: ['MORGON', 'BEAUJOLAIS', 'BOURGOGNE'],
+            cepages: [
+                { id: 'MORGON', robes: ['Rouge'] },
+                { id: 'BEAUJOLAIS', robes: ['Blanc', 'Rosé', 'Rouge'] },
+                { id: 'BOURGOGNE', robes: ['Blanc', 'Rouge'] },
+            ],
         },
         {
             id: 'DOMAINE FAURY',
-            cepages: ['COTE-ROTIE'],
+            cepages: [{ id: 'CÔTE-RÔTIE', robes: ['Blanc', 'Rouge'] }],
         },
         {
             id: 'DOMAINE YANN CHAVE',
-            cepages: ['CROZES HERMITAGE'],
+            cepages: [{ id: 'CROZES HERMITAGE', robes: ['Blanc', 'Rouge'] }],
         },
         {
             id: 'DOMAINE DE BEAURENARD',
-            cepages: ['CHATEAUNEUF DU PAPE'],
+            cepages: [{ id: 'CHATEAUNEUF DU PAPE', robes: ['Blanc', 'Rouge'] }],
         },
         {
             id: 'DOMAINE DE MONTVAC',
-            cepages: ['VACQUEYRAS'],
+            cepages: [{ id: 'VACQUEYRAS', robes: ['Blanc', 'Rosé', 'Rouge'] }],
         },
         {
             id: 'DOMAINE DE LA GUICHARDE',
-            cepages: ['CÔTES DU RHONE'],
+            cepages: [
+                { id: 'CÔTES DU RHÔNE', robes: ['Blanc', 'Rosé', 'Rouge'] },
+            ],
         },
         {
             id: 'DOMAINE DE LA TOURADE',
-            cepages: ['CÔTES DU RHONE VILLAGE'],
+            cepages: [
+                {
+                    id: 'CÔTES DU RHÔNE VILLAGE',
+                    robes: ['Blanc', 'Rosé', 'Rouge'],
+                },
+            ],
         },
         {
             id: 'DOMAINE FRANCOIS VILLARD',
-            cepages: ['LES RHONES NORD'],
+            cepages: [{ id: 'LES RHONES NORD', robes: ['Blanc', 'Rouge'] }],
         },
         {
             id: 'CUILLERON GAILLARD VILLARD',
-            cepages: ['LES VINS DE VIENNE'],
+            cepages: [{ id: 'LES VINS DE VIENNE', robes: ['Blanc', 'Rouge'] }],
         },
         {
             id: 'CHATEAU MAS NEUF',
-            cepages: ['COSTIERES DE NIMES'],
+            cepages: [
+                { id: 'COSTIERES DE NÎMES', robes: ['Blanc', 'Rosé', 'Rouge'] },
+            ],
         },
     ],
 }
@@ -81,13 +94,26 @@ const auvergne = {
 const bourgogne = {
     id: 'Bourgogne-Franche-Comté',
     domains: [
-        { id: 'DOMAINE LAMY-PILLOT', cepages: ['BOURGOGNES'] },
-        { id: 'DOMAINE NATHALIE & GILLES FEVRE', cepages: ['CHABLIS'] },
+        {
+            id: 'DOMAINE LAMY-PILLOT',
+            cepages: [{ id: 'BOURGOGNES', robes: ['Blanc', 'Rouge'] }],
+        },
+        {
+            id: 'DOMAINE NATHALIE & GILLES FEVRE',
+            cepages: [{ id: 'CHABLIS', robes: ['Blanc'] }],
+        },
         {
             id: 'DOMAINE DEVILLARD',
-            cepages: ['MERCUREY', 'GIVRY', 'NUITS SAINT GEORGES'],
+            cepages: [
+                { id: 'MERCUREY', robes: ['Blanc', 'Rouge'] },
+                { id: 'GIVRY', robes: ['Blanc', 'Rouge'] },
+                { id: 'NUITS SAINT GEORGES', robes: ['Blanc', 'Rouge'] },
+            ],
         },
-        { id: 'DOMAINE SAINT AMANT', cepages: ['BEAUMES-DE-VENISE'] },
+        {
+            id: 'DOMAINE SAINT AMANT',
+            cepages: [{ id: 'BEAUMES-DE-VENISE', robes: ['Blanc', 'Rouge'] }],
+        },
     ],
 }
 
@@ -96,7 +122,10 @@ const grandEst = {
     domains: [
         {
             id: 'DOMAINE DES COMTES DE LUPFEN',
-            cepages: ["VIN D'ALSACE", 'EAU DE VIE'],
+            cepages: [
+                { id: "VIN D'ALSACE", robes: ['Blanc'] },
+                { id: 'EAU DE VIE', robes: ['Blanc'] },
+            ],
         },
     ],
 }
@@ -107,53 +136,118 @@ const nouvelleAquitaine = {
         {
             id: 'MAISON H. CUVELIER & FILS',
             cepages: [
-                'SAINT ESTEPHE',
-                'SAINT JULIEN',
-                'GRANDS VINS DE BORDEAUX',
+                { id: 'SAINT ESTEPHE', robes: ['Rouge'] },
+                { id: 'SAINT JULIEN', robes: ['Rouge'] },
+                {
+                    id: 'GRANDS VINS DE BORDEAUX',
+                    robes: ['Blanc', 'Rosé', 'Rouge'],
+                },
             ],
         },
         {
             id: 'VIGNOBLES ANDRE LURTON',
             cepages: [
-                'BORDEAUX ET ENTRE-DEUX-MERS',
-                'MARGAUX ET PESSAC LEOGNAN',
-                'LUSSAC SAINT EMILION',
+                {
+                    id: 'BORDEAUX ET ENTRE-DEUX-MERS',
+                    robes: ['Blanc'],
+                },
+                { id: 'MARGAUX', robes: ['Rouge'] },
+                { id: 'PESSAC-LÉOGNAN', robes: ['Blanc', 'Rouge'] },
+                { id: 'LUSSAC-SAINT-ÉMILION', robes: ['Rouge'] },
             ],
         },
-        { id: 'CHATEAU RAMAGE LA BATISSE', cepages: ['HAUT-MEDOC'] },
-        { id: 'CHATEAU DE BELCIER', cepages: ['CÔTES DE CASTILLON'] },
+        {
+            id: 'CHATEAU RAMAGE LA BATISSE',
+            cepages: [{ id: 'HAUT-MEDOC', robes: ['Rouge'] }],
+        },
+        {
+            id: 'CHATEAU DE BELCIER',
+            cepages: [{ id: 'CÔTES DE CASTILLON', robes: ['Rouge'] }],
+        },
     ],
 }
 
 const paysDeLaLoire = {
     id: 'Pays de la Loire',
     domains: [
-        { id: 'MAISON LAPORTE', cepages: ['SANCERRE', 'POUILLY-FUME'] },
-        { id: 'DOMAINES TATIN', cepages: ['QUINCY', 'REUILLY'] },
-        { id: 'DOMAINE MAISON & FILS', cepages: ['CHEVERNY'] },
+        {
+            id: 'MAISON LAPORTE',
+            cepages: [
+                { id: 'SANCERRE', robes: ['Blanc', 'Rouge'] },
+                { id: 'POUILLY-FUME', robes: ['Blanc'] },
+            ],
+        },
+        {
+            id: 'DOMAINES TATIN',
+            cepages: [
+                { id: 'QUINCY', robes: ['Blanc'] },
+                { id: 'REUILLY', robes: ['Blanc', 'Rouge'] },
+            ],
+        },
+        {
+            id: 'DOMAINE MAISON & FILS',
+            cepages: [{ id: 'CHEVERNY', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+        },
         {
             id: 'PASCAL & ALAIN LORIEUX',
-            cepages: ['ST NICOLAS DE BOURGUEIL', 'CHINON'],
+            cepages: [
+                { id: 'ST NICOLAS DE BOURGUEIL', robes: ['Rosé', 'Rouge'] },
+                { id: 'CHINON', robes: ['Rosé', 'Rouge'] },
+            ],
         },
-        { id: 'DOMAINE FILLIATREAU', cepages: ['SAUMUR', 'SAUMUR CHAMPIGNY'] },
-        { id: 'DOMAINE PIERRE LUNEAU-PAPIN', cepages: ['MUSCADET'] },
+        {
+            id: 'DOMAINE FILLIATREAU',
+            cepages: [
+                { id: 'SAUMUR', robes: ['Blanc', 'Rosé', 'Rouge'] },
+                { id: 'SAUMUR CHAMPIGNY', robes: ['Rouge'] },
+            ],
+        },
+        {
+            id: 'DOMAINE PIERRE LUNEAU-PAPIN',
+            cepages: [{ id: 'MUSCADET', robes: ['Blanc'] }],
+        },
     ],
 }
 
 const provence = {
     id: "Provence-Alpes-Côte d'Azur",
     domains: [
-        { id: 'DOMAINE DE LA BEGUDE', cepages: ['BANDOL AOC'] },
-        { id: 'CHATEAU PAS DU CERF', cepages: ['AOP CÔTES DE PROVENCE'] },
+        {
+            id: 'DOMAINE DE LA BEGUDE',
+            cepages: [{ id: 'BANDOL', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+        },
+        {
+            id: 'CHATEAU PAS DU CERF',
+            cepages: [
+                {
+                    id: 'CÔTES DE PROVENCE',
+                    robes: ['Blanc', 'Rosé', 'Rouge'],
+                },
+            ],
+        },
     ],
 }
 
 const occitanie = {
     id: 'Occitanie',
     domains: [
-        { id: 'CHATEAU PUECH-HAUT', cepages: ['LANGUEDOC'] },
-        { id: 'DOMAINE SAINTE LEOCADIE', cepages: ['MINERVOIS'] },
-        { id: 'DOMAINE DE LA CENDRILLON', cepages: ['IGP & AOP CORBIERES'] },
+        {
+            id: 'CHATEAU PUECH-HAUT',
+            cepages: [{ id: 'LANGUEDOC', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+        },
+        {
+            id: 'DOMAINE SAINTE LEOCADIE',
+            cepages: [{ id: 'MINERVOIS', robes: ['Blanc', 'Rouge'] }],
+        },
+        {
+            id: 'DOMAINE DE LA CENDRILLON',
+            cepages: [
+                {
+                    id: 'IGP & AOP CORBIERES',
+                    robes: ['Blanc', 'Rosé', 'Rouge'],
+                },
+            ],
+        },
     ],
 }
 
@@ -174,17 +268,20 @@ regionList.forEach(region => {
         domainList.push(domain.id)
     })
 })
+domainList.sort()
+// console.log(domainList)
 
 // Create the cepagesList
 const cepagesList = []
 regionList.forEach(region => {
     region.domains.forEach(domain => {
         domain.cepages.forEach(cepage => {
-            cepagesList.push(cepage)
+            cepagesList.push(cepage.id)
         })
     })
 })
 cepagesList.sort()
+// console.log(cepagesList)
 
 polygonTemplate.events.on('hit', function (ev) {
     const mapOverlay = document.querySelector('.mapOverlay')
@@ -280,7 +377,19 @@ function createCepagesList(domain, cepagesDiv) {
             document.createElement('p'),
             null
         )
-        cepagesInnerDivP.innerHTML = cepage
+        let stickers = []
+        cepage.robes.forEach(robe => {
+            if (robe === 'Blanc') {
+                stickers += '<i class="fas fa-circle sticker-white"></i>'
+            } else if (robe === 'Rosé') {
+                stickers += '<i class="fas fa-circle sticker-pink"></i>'
+            } else if (robe === 'Rouge') {
+                stickers += '<i class="fas fa-circle sticker-red"></i>'
+            } else {
+                console.log('Failed')
+            }
+        })
+        cepagesInnerDivP.innerHTML = cepage.id + stickers
     })
 }
 
