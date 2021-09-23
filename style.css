@@ -390,6 +390,9 @@ nav img {
 
 .mapOverlay {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 350px;
     display: grid;
     gap: 0.75rem;
@@ -399,7 +402,7 @@ nav img {
     border: 1px white solid;
     z-index: 2;
     padding-bottom: 1rem;
-    place-self: center;
+    /* place-self: center; */
 }
 
 .mapOverlay .overlayH1 {
