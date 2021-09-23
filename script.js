@@ -243,6 +243,7 @@ function resetCepages() {
     const domainDivList = document.querySelectorAll('.domainDiv')
     domainDivList.forEach(e => {
         e.firstChild.firstChild.style.rotate = '0deg'
+        e.classList.remove('domainDivActive')
     })
 }
 
@@ -255,6 +256,7 @@ function createDomainList(domain, domainDiv, domainP) {
         )
         cepagesDiv.classList.add('cepagesDiv')
         resetCepages()
+        domainDiv.classList.add('domainDivActive')
         domainDiv.firstChild.firstChild.style.rotate = '-90deg'
         createCepagesList(domain, cepagesDiv)
     })
