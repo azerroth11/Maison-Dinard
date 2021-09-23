@@ -231,6 +231,38 @@ nav img {
     transform: translateY(-25%);
 }
 
+/* Wine section */
+.sectionMobile {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.sectionMobile .selection {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 2rem;
+}
+
+.sectionMobile ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.sectionMobile li {
+    margin-bottom: 1rem;
+}
+
+.sectionMobile a {
+    display: flex;
+    gap: 1rem;
+    color: var(--accent);
+}
+
+.sectionMobile ul i {
+    font-size: 1.5rem;
+}
+
 /* Champagne section */
 .champagne {
     margin: 4vh 0 10vh 0;
@@ -346,17 +378,18 @@ nav img {
 /* Map + Legend */
 .map {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
+    /* grid-template-columns: 1fr 1fr; */
+    /* height: 100vh; */
     overflow: hidden;
     place-items: center;
 }
 
 /* Map */
 #chartdiv {
-    height: 75vh;
+    height: 50vh;
     width: 100%;
     margin: auto;
+    margin-top: 8rem;
 }
 
 .legend {
@@ -488,7 +521,6 @@ footer {
 }
 
 @media screen and (min-width: 1080px) {
-
     .beverage-choice .vins a h1 {
         transform: rotate(-90deg) translate(-30px, 55px);
     }

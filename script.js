@@ -21,42 +21,42 @@ map.chartContainer.background.events.disableType('doublehit')
 // Enabled scroll through
 map.chartContainer.wheelable = false
 // Custom legends
-polygonTemplate.events.on('hit', function (ev) {
-    const region = document.querySelector('.regionH1')
-    let regionID = ev.target.dataItem.dataContext.name
-    region.innerText = regionID
-    const grandEst = document.querySelector('.grand-est')
-    const auvergne = document.querySelector('.auvergne')
-    if (regionID == 'Grand Est') {
-        hideRegions()
-        grandEst.classList.remove('invisible')
-    } else if (regionID == 'Auvergne-Rhône-Alpes') {
-        hideRegions()
-        auvergne.classList.remove('invisible')
-    } else if (regionID == 'Bourgogne-Franche-Comté') {
-        hideRegions()
-        const bourgogne = document.querySelector('.bourgogne')
-        bourgogne.classList.remove('invisible')
-    } else if (regionID == 'Nouvelle-Aquitaine') {
-        hideRegions()
-        const aquitaine = document.querySelector('.nouvelle-aquitaine')
-        aquitaine.classList.remove('invisible')
-    } else if (regionID == 'Occitanie') {
-        hideRegions()
-        const occitanie = document.querySelector('.languedoc')
-        occitanie.classList.remove('invisible')
-    } else if (regionID == 'Pays de la Loire') {
-        hideRegions()
-        const loire = document.querySelector('.loire')
-        loire.classList.remove('invisible')
-    } else if (regionID == "Provence-Alpes-Côte d'Azur") {
-        hideRegions()
-        const provence = document.querySelector('.provence')
-        provence.classList.remove('invisible')
-    } else {
-        hideRegions()
-    }
-})
+// polygonTemplate.events.on('hit', function (ev) {
+//     const region = document.querySelector('.regionH1')
+//     let regionID = ev.target.dataItem.dataContext.name
+//     region.innerText = regionID
+//     const grandEst = document.querySelector('.grand-est')
+//     const auvergne = document.querySelector('.auvergne')
+//     if (regionID == 'Grand Est') {
+//         hideRegions()
+//         grandEst.classList.remove('invisible')
+//     } else if (regionID == 'Auvergne-Rhône-Alpes') {
+//         hideRegions()
+//         auvergne.classList.remove('invisible')
+//     } else if (regionID == 'Bourgogne-Franche-Comté') {
+//         hideRegions()
+//         const bourgogne = document.querySelector('.bourgogne')
+//         bourgogne.classList.remove('invisible')
+//     } else if (regionID == 'Nouvelle-Aquitaine') {
+//         hideRegions()
+//         const aquitaine = document.querySelector('.nouvelle-aquitaine')
+//         aquitaine.classList.remove('invisible')
+//     } else if (regionID == 'Occitanie') {
+//         hideRegions()
+//         const occitanie = document.querySelector('.languedoc')
+//         occitanie.classList.remove('invisible')
+//     } else if (regionID == 'Pays de la Loire') {
+//         hideRegions()
+//         const loire = document.querySelector('.loire')
+//         loire.classList.remove('invisible')
+//     } else if (regionID == "Provence-Alpes-Côte d'Azur") {
+//         hideRegions()
+//         const provence = document.querySelector('.provence')
+//         provence.classList.remove('invisible')
+//     } else {
+//         hideRegions()
+//     }
+// })
 
 function hideRegions() {
     const regions = document.querySelectorAll('.region')
@@ -72,35 +72,192 @@ const beverageSection = document.querySelector('.beverage-choice')
 const mapSection = document.querySelector('.map')
 const wine = document.querySelector('.vins')
 
-wine.addEventListener('click', () => {
-    beverageSection.classList.add('invisible')
-    if (window.innerWidth < 1850) {
-        const sectionMobile = body.insertBefore(
-            document.createElement('section'),
-            footer
-        )
-        sectionMobile.classList.add('domainsMobile')
-        const regionsList = document.querySelectorAll('.region')
-        regionsList.forEach(e => {
-            const regionDiv = sectionMobile.appendChild(
-                document.createElement('div')
-            )
-            regionDiv.classList.add('regionDiv')
-            let regionH1 = regionDiv.appendChild(document.createElement('h1'))
-            regionH1.innerHTML = e.id
-            let domainList = e.children
-            domainList.forEach(i => {
-                let domain = regionDiv.appendChild(
-                    document.createElement('div')
-                )
-                domain.insertAdjacentHTML('beforeend', i.innerHTML)
-            })
-        })
-    } else {
-        const map = document.querySelector('.map')
-        map.classList.remove('invisible')
-    }
+const auvergne = {
+    id: 'Auvergne-Rhône-Alpes',
+    domains: [
+        {
+            id: 'CHATEAU DE PIZAY',
+            cepages: ['MORGON', 'BEAUJOLAIS', 'BOURGOGNE'],
+        },
+        {
+            id: 'DOMAINE FAURY',
+            cepages: ['COTE-ROTIE'],
+        },
+        {
+            id: 'DOMAINE YANN CHAVE',
+            cepages: ['CROZES HERMITAGE'],
+        },
+        {
+            id: 'DOMAINE DE BEAURENARD',
+            cepages: ['CHATEAUNEUF DU PAPE'],
+        },
+        {
+            id: 'DOMAINE DE MONTVAC',
+            cepages: ['VACQUEYRAS'],
+        },
+        {
+            id: 'DOMAINE DE LA GUICHARDE',
+            cepages: ['CÔTES DU RHONE'],
+        },
+        {
+            id: 'DOMAINE DE LA TOURADE',
+            cepages: ['CÔTES DU RHONE VILLAGE'],
+        },
+        {
+            id: 'DOMAINE FRANCOIS VILLARD',
+            cepages: ['LES RHONES NORD'],
+        },
+        {
+            id: 'CUILLERON GAILLARD VILLARD',
+            cepages: ['LES VINS DE VIENNE'],
+        },
+        {
+            id: 'CHATEAU MAS NEUF',
+            cepages: ['COSTIERES DE NIMES'],
+        },
+    ],
+}
+
+const bourgogne = {
+    id: 'Bourgogne-Franche-Comté',
+    domains: [
+        { id: 'DOMAINE LAMY-PILLOT', cepages: ['BOURGOGNES'] },
+        { id: 'DOMAINE NATHALIE & GILLES FEVRE', cepages: ['CHABLIS'] },
+        {
+            id: 'DOMAINE DEVILLARD',
+            cepages: ['MERCUREY', 'GIVRY', 'NUITS SAINT GEORGES'],
+        },
+        { id: 'DOMAINE SAINT AMANT', cepages: ['BEAUMES-DE-VENISE'] },
+    ],
+}
+
+const grandEst = {
+    id: 'Grand Est',
+    domains: [
+        {
+            id: 'DOMAINE DES COMTES DE LUPFEN',
+            cepages: ["VIN D'ALSACE", 'EAU DE VIE'],
+        },
+    ],
+}
+
+const nouvelleAquitaine = {
+    id: 'Nouvelle-Aquitaine',
+    domains: [
+        {
+            id: 'MAISON H. CUVELIER & FILS',
+            cepages: [
+                'SAINT ESTEPHE',
+                'SAINT JULIEN',
+                'GRANDS VINS DE BORDEAUX',
+            ],
+        },
+        {
+            id: 'VIGNOBLES ANDRE LURTON',
+            cepages: [
+                'BORDEAUX ET ENTRE-DEUX-MERS',
+                'MARGAUX ET PESSAC LEOGNAN',
+                'LUSSAC SAINT EMILION',
+            ],
+        },
+        { id: 'CHATEAU RAMAGE LA BATISSE', cepages: ['HAUT-MEDOC'] },
+        { id: 'CHATEAU DE BELCIER', cepages: ['CÔTES DE CASTILLON'] },
+    ],
+}
+
+const paysDeLaLoire = {
+    id: 'Pays de la Loire',
+    domains: [
+        { id: 'MAISON LAPORTE', cepages: ['SANCERRE', 'POUILLY-FUME'] },
+        { id: 'DOMAINES TATIN', cepages: ['QUINCY', 'REUILLY'] },
+        { id: 'DOMAINE MAISON & FILS', cepages: ['CHEVERNY'] },
+        {
+            id: 'PASCAL & ALAIN LORIEUX',
+            cepages: ['ST NICOLAS DE BOURGUEIL', 'CHINON'],
+        },
+        { id: 'DOMAINE FILLIATREAU', cepages: ['SAUMUR', 'SAUMUR CHAMPIGNY'] },
+        { id: 'DOMAINE PIERRE LUNEAU-PAPIN', cepages: ['MUSCADET'] },
+    ],
+}
+
+const provence = {
+    id: "Provence-Alpes-Côte d'Azur",
+    domains: [
+        { id: 'DOMAINE DE LA BEGUDE', cepages: ['BANDOL AOC'] },
+        { id: 'CHATEAU PAS DU CERF', cepages: ['AOP CÔTES DE PROVENCE'] },
+    ],
+}
+
+const occitanie = {
+    id: 'Occitanie',
+    domains: [
+        { id: 'CHATEAU PUECH-HAUT', cepages: ['LANGUEDOC'] },
+        { id: 'DOMAINE SAINTE LEOCADIE', cepages: ['MINERVOIS'] },
+        { id: 'DOMAINE DE LA CENDRILLON', cepages: ['IGP & AOP CORBIERES'] },
+    ],
+}
+
+const regionList = [
+    auvergne,
+    bourgogne,
+    grandEst,
+    nouvelleAquitaine,
+    occitanie,
+    paysDeLaLoire,
+    provence,
+]
+
+// Create the domainList
+const domainList = []
+regionList.forEach(region => {
+    region.domains.forEach(domain => {
+        domainList.push(domain.id)
+    })
 })
+// console.log(domainList)
+
+// Create the cepagesList
+const cepagesList = []
+regionList.forEach(region => {
+    region.domains.forEach(domain => {
+        domain.cepages.forEach(cepage => {
+            cepagesList.push(cepage)
+        })
+    })
+})
+cepagesList.sort()
+// console.log(cepagesList)
+
+// wine.addEventListener('click', () => {
+//     beverageSection.classList.add('invisible')
+//     if (window.innerWidth < 1850) {
+//         const sectionMobile = body.insertBefore(
+//             document.createElement('section'),
+//             footer
+//         )
+//         sectionMobile.classList.add('domainsMobile')
+//         const regionsList = document.querySelectorAll('.region')
+//         regionsList.forEach(e => {
+//             console.log(e)
+//             const regionDiv = sectionMobile.appendChild(
+//                 document.createElement('div')
+//             )
+//             regionDiv.classList.add('regionDiv')
+//             let regionH1 = regionDiv.appendChild(document.createElement('h1'))
+//             regionH1.innerHTML = e.id
+//             let domainList = e.children
+//             domainList.forEach(i => {
+//                 let domain = regionDiv.appendChild(
+//                     document.createElement('div')
+//                 )
+//                 domain.insertAdjacentHTML('beforeend', i.innerHTML)
+//             })
+//         })
+//     } else {
+//         const map = document.querySelector('.map')
+//         map.classList.remove('invisible')
+//     }
+// })
 
 // Champagnes selection
 const champagnes = document.querySelector('.champagnes')
