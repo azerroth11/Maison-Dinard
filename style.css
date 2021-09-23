@@ -51,7 +51,7 @@ i {
 }
 
 .blur {
-    filter: opacity(0.05);
+    filter: opacity(0.15);
 }
 
 /* Nav */
@@ -61,7 +61,6 @@ nav {
     display: grid;
     place-items: center;
     overflow: visible;
-    z-index: 10;
     text-align: center;
     margin-bottom: -10vh;
 }
@@ -232,33 +231,33 @@ nav img {
 }
 
 /* Wine section */
-.sectionMobile {
+.mobileChoice {
     margin: 0 auto;
 }
 
-.sectionMobile .selection {
+.mobileChoice .selection {
     display: flex;
     flex-direction: column;
     place-items: center;
     gap: 1rem;
 }
 
-.sectionMobile ul {
+.mobileChoice ul {
     list-style-type: none;
     text-align: center;
 }
 
-.sectionMobile li {
+.mobileChoice li {
     margin-bottom: 1rem;
 }
 
-.sectionMobile a {
+.mobileChoice a {
     display: flex;
     gap: 1rem;
     color: var(--accent);
 }
 
-.sectionMobile ul i {
+.mobileChoice ul i {
     font-size: 1.5rem;
 }
 
@@ -374,16 +373,13 @@ nav img {
     gap: 0.1rem !important;
 }
 
-/* Map + Legend */
+/* Map - France/regions*/
 .map {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */
-    /* height: 100vh; */
     overflow: hidden;
     place-items: center;
 }
 
-/* Map */
 #chartdiv {
     height: 50vh;
     width: 100%;
@@ -391,119 +387,41 @@ nav img {
     margin-top: 9rem;
 }
 
-.legend {
-    margin: auto;
-    border-radius: 5px;
-    text-align: center;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-    box-shadow: 2px 3px 20px rgba(0, 0, 0, 1);
-}
-
-.legend h1 {
-    background-color: var(--accent);
-    color: #fff;
-    padding: 0.75rem;
-}
-
-.legend .region {
+.mapOverlay {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
     display: flex;
-    flex-wrap: wrap;
-    max-height: 640px;
-    max-width: 920px;
-}
-
-.legend .region .domain {
-    width: 460px;
-    position: relative;
-    border: 1px solid #fff;
-    flex-grow: 1;
-}
-
-.legend .region .domain h2 {
-    font-size: 1.3rem;
-    position: absolute;
-    color: #fff;
-    top: 0.25rem;
-    left: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: hsla(207, 50%, 50%, 0.5);
+    border-radius: 5px;
+    outline: 1px white solid;
     z-index: 2;
+    padding-bottom: 1rem;
 }
 
-.legend .region .domain ul {
-    position: absolute;
-    color: #fff;
-    top: 1.85rem;
-    left: 5rem;
-    z-index: 2;
-    text-align: left;
-    font-size: 1.15rem;
-    line-height: 1.7rem;
-}
-
-.legend img {
-    height: 120px;
-    object-fit: cover;
-    width: 100%;
-    filter: brightness(40%);
-}
-
-/* Mobile version */
-.domainsMobile {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
-    margin: 25vh auto 10vh auto;
-    gap: 2rem;
-}
-
-.regionDiv {
-    margin: 0 auto;
-}
-
-.regionDiv h1 {
+.mapOverlay .overlayH1 {
     background-color: var(--accent);
     color: #fff;
     text-align: center;
+    padding: 0.5rem;
 }
 
-.regionDiv:first-child {
-    grid-row: 1 / span 3;
-}
-
-.regionDiv:nth-child(5) {
-    grid-row: 4 / span 5;
-}
-
-.regionDiv div {
-    width: 375px;
-    height: 175px;
-    position: relative;
-    border: 1px solid #fff;
-}
-
-.regionDiv div h2 {
-    font-size: 1.3rem;
-    position: absolute;
+.mapOverlay p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
     color: #fff;
-    top: 1rem;
-    left: 0.5rem;
-    z-index: 2;
+    padding-left: 0.5rem;
+    cursor: pointer;
 }
 
-.regionDiv div ul {
-    position: absolute;
-    color: #fff;
-    top: 3rem;
-    left: 2rem;
-    z-index: 2;
-    text-align: left;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-}
-
-.regionDiv img {
-    height: 175px;
-    object-fit: cover;
-    width: 100%;
-    filter: brightness(40%);
+.mapOverlay i {
+    font-size: 1.5rem;
 }
 
 /* Footer */
@@ -516,7 +434,6 @@ footer {
     height: 6vh;
     color: #fff;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-    z-index: 3;
 }
 
 @media screen and (min-width: 1080px) {

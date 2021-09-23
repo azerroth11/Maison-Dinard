@@ -27,35 +27,6 @@ map.chartContainer.wheelable = false
 //     region.innerText = regionID
 //     const grandEst = document.querySelector('.grand-est')
 //     const auvergne = document.querySelector('.auvergne')
-//     if (regionID == 'Grand Est') {
-//         hideRegions()
-//         grandEst.classList.remove('invisible')
-//     } else if (regionID == 'Auvergne-Rhône-Alpes') {
-//         hideRegions()
-//         auvergne.classList.remove('invisible')
-//     } else if (regionID == 'Bourgogne-Franche-Comté') {
-//         hideRegions()
-//         const bourgogne = document.querySelector('.bourgogne')
-//         bourgogne.classList.remove('invisible')
-//     } else if (regionID == 'Nouvelle-Aquitaine') {
-//         hideRegions()
-//         const aquitaine = document.querySelector('.nouvelle-aquitaine')
-//         aquitaine.classList.remove('invisible')
-//     } else if (regionID == 'Occitanie') {
-//         hideRegions()
-//         const occitanie = document.querySelector('.languedoc')
-//         occitanie.classList.remove('invisible')
-//     } else if (regionID == 'Pays de la Loire') {
-//         hideRegions()
-//         const loire = document.querySelector('.loire')
-//         loire.classList.remove('invisible')
-//     } else if (regionID == "Provence-Alpes-Côte d'Azur") {
-//         hideRegions()
-//         const provence = document.querySelector('.provence')
-//         provence.classList.remove('invisible')
-//     } else {
-//         hideRegions()
-//     }
 // })
 
 function hideRegions() {
@@ -228,36 +199,25 @@ regionList.forEach(region => {
 cepagesList.sort()
 // console.log(cepagesList)
 
-// wine.addEventListener('click', () => {
-//     beverageSection.classList.add('invisible')
-//     if (window.innerWidth < 1850) {
-//         const sectionMobile = body.insertBefore(
-//             document.createElement('section'),
-//             footer
-//         )
-//         sectionMobile.classList.add('domainsMobile')
-//         const regionsList = document.querySelectorAll('.region')
-//         regionsList.forEach(e => {
-//             console.log(e)
-//             const regionDiv = sectionMobile.appendChild(
-//                 document.createElement('div')
-//             )
-//             regionDiv.classList.add('regionDiv')
-//             let regionH1 = regionDiv.appendChild(document.createElement('h1'))
-//             regionH1.innerHTML = e.id
-//             let domainList = e.children
-//             domainList.forEach(i => {
-//                 let domain = regionDiv.appendChild(
-//                     document.createElement('div')
-//                 )
-//                 domain.insertAdjacentHTML('beforeend', i.innerHTML)
-//             })
-//         })
-//     } else {
-//         const map = document.querySelector('.map')
-//         map.classList.remove('invisible')
-//     }
-// })
+polygonTemplate.events.on('hit', function (ev) {
+    const mapOverlay = document.querySelector('.mapOverlay')
+    const sectionMap = document.querySelector('.map')
+    const sectionMobileChoice = document.querySelector('.mobileChoice')
+    const overlayH1 = document.querySelector('.overlayH1')
+    mapOverlay.classList.remove('invisible')
+    sectionMap.classList.add('blur')
+    sectionMobileChoice.classList.add('blur')
+    let clickedRegion = ev.target.dataItem.dataContext.name
+    overlayH1.innerHTML = clickedRegion
+    const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
+    selectedRegion.domains.forEach(e => {
+        const domainP = mapOverlay.insertBefore(
+            document.createElement('p'),
+            null
+        )
+        domainP.innerHTML = `${"<i class='fas fa-caret-down'></i>"} ${e.id}`
+    })
+})
 
 // Champagnes selection
 const champagnes = document.querySelector('.champagnes')
