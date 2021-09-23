@@ -379,7 +379,6 @@ nav img {
 .map {
     display: grid;
     overflow: hidden;
-    place-items: flex-start center;
 }
 
 #chartdiv {
@@ -400,7 +399,7 @@ nav img {
     border: 1px white solid;
     z-index: 2;
     padding-bottom: 1rem;
-    place-self: center !important;
+    place-self: center;
 }
 
 .mapOverlay .overlayH1 {
