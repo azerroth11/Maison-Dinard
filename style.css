@@ -392,8 +392,7 @@ nav img {
 .mapOverlay {
     position: absolute;
     min-width: 350px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 0.75rem;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 25px;
