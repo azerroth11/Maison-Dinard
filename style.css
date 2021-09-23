@@ -234,14 +234,13 @@ nav img {
 /* Wine section */
 .sectionMobile {
     margin: 0 auto;
-    padding: 2rem;
 }
 
 .sectionMobile .selection {
     display: flex;
     flex-direction: column;
     place-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .sectionMobile ul {
@@ -389,7 +388,7 @@ nav img {
     height: 50vh;
     width: 100%;
     margin: auto;
-    margin-top: 8rem;
+    margin-top: 9rem;
 }
 
 .legend {
