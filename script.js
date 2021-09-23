@@ -194,6 +194,7 @@ polygonTemplate.events.on('hit', function (ev) {
     sectionMobileChoice.classList.add('blur')
     let clickedRegion = ev.target.dataItem.dataContext.name
     overlayH1.innerHTML = clickedRegion
+    // const closeBtnWine = document.createElement(<i class='fas fa-times'></i>)
     const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
     if (selectedRegion) {
         resetDomains()
@@ -322,9 +323,9 @@ discoverDrappier.addEventListener('click', e => {
 })
 
 // Close BTN
-const closeBTN = document.querySelectorAll('.close-btn')
+const closeBtnChampagne = document.querySelectorAll('.close-btn')
 
-closeBTN.forEach(e => {
+closeBtnChampagne.forEach(e => {
     e.addEventListener('click', () => {
         billecartSelection.classList.add('invisible')
         drappierSelection.classList.add('invisible')

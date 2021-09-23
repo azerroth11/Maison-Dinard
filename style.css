@@ -391,7 +391,6 @@ nav img {
 
 .mapOverlay {
     position: absolute;
-    top: 20%;
     min-width: 350px;
     display: flex;
     flex-direction: column;
@@ -399,7 +398,7 @@ nav img {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 25px;
     overflow: hidden;
-    outline: 1px white solid;
+    border: 1px white solid;
     z-index: 2;
     padding-bottom: 1rem;
     place-self: center;
