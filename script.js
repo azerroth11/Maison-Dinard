@@ -136,33 +136,222 @@ const nouvelleAquitaine = {
         {
             id: 'MAISON H. CUVELIER & FILS',
             cepages: [
-                { id: 'SAINT ESTEPHE', robes: ['Rouge'] },
-                { id: 'SAINT JULIEN', robes: ['Rouge'] },
                 {
-                    id: 'GRANDS VINS DE BORDEAUX',
+                    id: 'SAINT ESTEPHE',
+                    robes: ['Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Le Crock',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/SAINT ESTEPHE/Château le Crock.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château La Croix Saint Estephe',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/SAINT ESTEPHE/Château la Croix St Estephe.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'SAINT JULIEN',
+                    robes: ['Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Leoville Poyferre',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/SAINT JULIEN/Chateau Léoville Poyferré.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Moulin Riche',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/SAINT JULIEN/Château Moulin Riche.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Pavillon Leoville Poyferre',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/SAINT JULIEN/Pavillon de Léoville Poyferré.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Saint Julien Cuvelier',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'GRANDS VINS DE BDX',
                     robes: ['Blanc', 'Rosé', 'Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Crabitey',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/GRAND VINS DE BORDEAUX/Château Crabitey.pdf',
+                            color: 'Rouge',
+                        },
+                        {
+                            id: 'Château Chasse Spleen',
+                            link: './PDF/Vin/BORDEAUX/H.Cuvelier/GRAND VINS DE BORDEAUX/L’Héritage de Chasse Spleen.pdf',
+                            color: 'Rouge',
+                        },
+                    ],
                 },
             ],
+            topo: 'Le savoir-faire de la maison H.Cuvelier & Fils naît de son excellente connaissance du terroir et de la production, grâce à la détention de plusieurs châteaux familiaux ainsi que l’exclusivité sur des grands vins de Bordeaux.',
         },
         {
             id: 'VIGNOBLES ANDRE LURTON',
             cepages: [
                 {
-                    id: 'ENTRE-DEUX-MERS',
-                    robes: ['Blanc'],
+                    id: 'BORDEAUX ET ENTRE-DEUX-MERS',
+                    robes: ['Blanc', 'Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Bonnet',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/BORDEAUX ET ENTRE DEUX MERS/Château Bonnet/Chateau Bonnet - Bordeaux.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Bonnet',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/BORDEAUX ET ENTRE DEUX MERS/Château Bonnet/Chateau Bonnet - Entre-deux-mers.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Bonnet',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/BORDEAUX ET ENTRE DEUX MERS/Château Bonnet/Château Bonnet - Réserve Rouge.pdf',
+                            color: 'Rouge Réserve',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Tour de Bonnet',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/BORDEAUX ET ENTRE DEUX MERS/Château Tour de Bonnet/Château Tour de Bonnet - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Tour de Bonnet',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/BORDEAUX ET ENTRE DEUX MERS/Château Tour de Bonnet/Château Tour de Bonnet - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
                 },
-                { id: 'MARGAUX', robes: ['Rouge'] },
-                { id: 'PESSAC-LÉOGNAN', robes: ['Blanc', 'Rouge'] },
-                { id: 'LUSSAC-SAINT-ÉMILION', robes: ['Rouge'] },
+                {
+                    id: 'MARGAUX',
+                    robes: ['Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Dauzac',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/MARGAUX/Château Dauzac/Château Dauzac - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Labastide Dauzac',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/MARGAUX/Labastide Dauzac/Labastide Dauzac - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'PESSAC-LÉOGNAN',
+                    robes: ['Blanc', 'Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Coucheroy',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château Coucheroy/Château Coucheroy - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Coucheroy',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château Coucheroy/Château Coucheroy - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Couhins-Lurton',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château Couhins-Lurton/Château Couhins Lurton - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château Couhins-Lurton',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château Couhins-Lurton/Château Couhins Lurton - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château de Cruzeau',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château de Cruzeau/Château de Cruzeau - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château de Cruzeau',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château de Cruzeau/Château de Cruzeau - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château de Quantin',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château de Quantin/Château de Quantin - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château de Rochemorin',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château de Rochemorin/Château de Rochemorin - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château de Rochemorin',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château de Rochemorin/Château de Rochemorin - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château La Louvière',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château La Louvière/Château La Louvière - Blanc.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Château La Louvière',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/PESSAC LEOGNAN/Château La Louvière/Château La Louvière - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'LUSSAC-SAINT-ÉMILION',
+                    robes: ['Rouge'],
+                    ref: [
+                        {
+                            id: 'Château Tour de Ségur',
+                            link: './PDF/Vin/BORDEAUX/Vignobles André Lurton/LUSSAC SAINT EMILION/Château Tour de Ségur/Château Tour de Ségur - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
             ],
         },
         {
             id: 'CHATEAU RAMAGE LA BATISSE',
-            cepages: [{ id: 'HAUT-MEDOC', robes: ['Rouge'] }],
+            cepages: [{ id: 'HAUT-MEDOC', robes: ['Rouge'], ref: [] }],
         },
         {
             id: 'CHATEAU DE BELCIER',
-            cepages: [{ id: 'CÔTES DE CASTILLON', robes: ['Rouge'] }],
+            cepages: [{ id: 'CÔTES DE CASTILLON', robes: ['Rouge'], ref: [] }],
         },
     ],
 }
@@ -300,28 +489,7 @@ polygonTemplate.events.on('hit', function (ev) {
     const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
     if (selectedRegion) {
         resetDomains()
-        selectedRegion.domains.forEach(domain => {
-            const domainDiv = mapOverlay.insertBefore(
-                document.createElement('div'),
-                null
-            )
-            domainDiv.classList.add('domainDiv')
-            const domainP = domainDiv.insertBefore(
-                document.createElement('p'),
-                null
-            )
-            domainP.innerHTML = `${"<i class='fas fa-caret-down'></i>"} ${
-                domain.id
-            }`
-            createDomainList(domain, domainDiv, domainP)
-        })
-        const stickerLegend = mapOverlay.insertBefore(
-            document.createElement('p'),
-            null
-        )
-        stickerLegend.classList.add('stickerLegend')
-        stickerLegend.innerHTML =
-            '<i class="fas fa-circle sticker-white"></i>Vin blanc<i class="fas fa-circle sticker-pink"></i>Rosé<i class="fas fa-circle sticker-red"></i>Vin rouge'
+        populateDomains(selectedRegion, mapOverlay)
     } else {
         resetDomains()
         const domainDiv = mapOverlay.insertBefore(
@@ -337,14 +505,27 @@ polygonTemplate.events.on('hit', function (ev) {
     }
 })
 
-// Used when user clicks on a region without domains
+function populateDomains(selectedRegion, mapOverlay) {
+    selectedRegion.domains.forEach(domain => {
+        const domainDiv = mapOverlay.insertBefore(
+            document.createElement('div'),
+            null
+        )
+        domainDiv.classList.add('domainDiv')
+        const domainP = domainDiv.insertBefore(
+            document.createElement('p'),
+            null
+        )
+        domainP.innerHTML = `${"<i class='fas fa-caret-down'></i>"} ${
+            domain.id
+        }`
+        createDomainList(domain, domainDiv, domainP)
+    })
+}
+
 function resetDomains() {
     const domainsDivList = document.querySelectorAll('.domainDiv')
     domainsDivList.forEach(e => {
-        e.remove()
-    })
-    const stickerLegend = document.querySelectorAll('.stickerLegend')
-    stickerLegend.forEach(e => {
         e.remove()
     })
 }
@@ -363,16 +544,43 @@ function resetCepages() {
 
 // Create domains div
 function createDomainList(domain, domainDiv, domainP) {
-    domainP.addEventListener('click', () => {
-        const cepagesDiv = domainDiv.insertBefore(
-            document.createElement('div'),
-            null
-        )
-        cepagesDiv.classList.add('cepagesDiv')
-        resetCepages()
-        domainDiv.classList.add('domainDivActive')
-        domainDiv.firstChild.firstChild.style.rotate = '-90deg'
-        createCepagesList(domain, cepagesDiv)
+    domainP.addEventListener('click', e => {
+        if (document.querySelector('.domainDivActive') == null) {
+            const cepagesDiv = domainDiv.insertBefore(
+                document.createElement('div'),
+                null
+            )
+            cepagesDiv.classList.add('cepagesDiv')
+            resetCepages()
+            domainDiv.classList.add('domainDivActive')
+            domainDiv.firstChild.firstChild.style.rotate = '-90deg'
+            createCepagesList(domain, cepagesDiv)
+            const domainDivList = Array.from(
+                document.querySelectorAll('.domainDiv')
+            )
+            domainActive = document.querySelector('.domainDivActive')
+            const domainActiveIndex = domainDivList.indexOf(domainActive)
+            domainDivList.splice(domainActiveIndex, 1)
+            toggleOtherDomains(domainDivList)
+        } else {
+            domainActive = document.querySelector('.domainDivActive')
+            domainActive.lastChild.remove()
+            domainActive.classList.remove('domainDivActive')
+            const domainDivList = Array.from(
+                document.querySelectorAll('.domainDiv')
+            )
+            const domainActiveIndex = domainDivList.indexOf(domainActive)
+            domainDivList.splice(domainActiveIndex, 1)
+            toggleOtherDomains(domainDivList)
+            resetCepages()
+        }
+    })
+}
+
+// Remove domains which arene't active
+function toggleOtherDomains(domainDivList) {
+    domainDivList.forEach(i => {
+        i.classList.toggle('invisible')
     })
 }
 
@@ -388,19 +596,23 @@ function createCepagesList(domain, cepagesDiv) {
             document.createElement('p'),
             null
         )
-        let stickers = []
-        cepage.robes.forEach(robe => {
-            if (robe === 'Blanc') {
-                stickers += '<i class="fas fa-circle sticker-white"></i>'
-            } else if (robe === 'Rosé') {
-                stickers += '<i class="fas fa-circle sticker-pink"></i>'
-            } else if (robe === 'Rouge') {
-                stickers += '<i class="fas fa-circle sticker-red"></i>'
-            } else {
-                console.log('Failed')
-            }
-        })
-        cepagesInnerDivP.innerHTML = `${cepage.id} <div class="stickers">${stickers}</div>`
+        cepagesInnerDivP.innerHTML = cepage.id
+        if (cepage.ref != undefined) {
+            cepage.ref.forEach(reference => {
+                if (reference.id != undefined && reference.link != undefined) {
+                    const chateauDiv = cepagesInnerDiv.insertBefore(
+                        document.createElement('div'),
+                        null
+                    )
+                    chateauDiv.innerHTML = `${reference.id} - <p class="color">${reference.color}</p>`
+                    const pdflink = chateauDiv.insertBefore(
+                        document.createElement('a'),
+                        null
+                    )
+                    pdflink.innerHTML = `<a href="${reference.link}"><i class="fas fa-file-download"></i></a>`
+                }
+            })
+        }
     })
 }
 
