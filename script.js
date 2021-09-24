@@ -148,7 +148,7 @@ const nouvelleAquitaine = {
             id: 'VIGNOBLES ANDRE LURTON',
             cepages: [
                 {
-                    id: 'BORDEAUX ET ENTRE-DEUX-MERS',
+                    id: 'ENTRE-DEUX-MERS',
                     robes: ['Blanc'],
                 },
                 { id: 'MARGAUX', robes: ['Rouge'] },
