@@ -40,7 +40,6 @@ a {
 }
 
 i {
-    cursor: pointer;
     font-size: 48px;
 }
 
@@ -393,10 +392,10 @@ nav img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 350px;
+    min-width: 370px;
     display: grid;
     gap: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
     overflow: hidden;
     border: 1px white solid;
@@ -409,12 +408,10 @@ nav img {
     color: #fff;
     text-align: center;
     padding: 0.5rem;
+    font-size: 1.35rem;
 }
 
 .mapOverlay .fa-times {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
     color: #fff;
 }
 
@@ -426,11 +423,15 @@ nav img {
     font-size: 1.1rem;
     color: #000;
     padding: 0 0.5rem;
-    cursor: pointer;
 }
 
-.mapOverlay i {
+.mapOverlay .fa-caret-down,
+.mapOverlay .fa-times {
     font-size: 1.5rem;
+}
+
+.domainDiv > p {
+    cursor: pointer;
 }
 
 .domainDivActive {
@@ -447,9 +448,20 @@ nav img {
 
 .cepagesInnerDiv p {
     color: var(--accent);
+    display: flex;
+    justify-content: space-between;
 }
 
 .cepagesInnerDiv p i {
+    font-size: 1rem;
+    margin-left: 0.1rem;
+}
+
+.stickerLegend {
+    justify-self: center;
+}
+
+.fa-circle {
     font-size: 1rem;
 }
 

@@ -315,6 +315,13 @@ polygonTemplate.events.on('hit', function (ev) {
             }`
             createDomainList(domain, domainDiv, domainP)
         })
+        const stickerLegend = mapOverlay.insertBefore(
+            document.createElement('p'),
+            null
+        )
+        stickerLegend.classList.add('stickerLegend')
+        stickerLegend.innerHTML =
+            '<i class="fas fa-circle sticker-white"></i>Vin blanc<i class="fas fa-circle sticker-pink"></i>Rosé<i class="fas fa-circle sticker-red"></i>Vin rouge'
     } else {
         resetDomains()
         const domainDiv = mapOverlay.insertBefore(
@@ -334,6 +341,10 @@ polygonTemplate.events.on('hit', function (ev) {
 function resetDomains() {
     const domainsDivList = document.querySelectorAll('.domainDiv')
     domainsDivList.forEach(e => {
+        e.remove()
+    })
+    const stickerLegend = document.querySelectorAll('.stickerLegend')
+    stickerLegend.forEach(e => {
         e.remove()
     })
 }
@@ -389,7 +400,7 @@ function createCepagesList(domain, cepagesDiv) {
                 console.log('Failed')
             }
         })
-        cepagesInnerDivP.innerHTML = cepage.id + stickers
+        cepagesInnerDivP.innerHTML = `${cepage.id} <div class="stickers">${stickers}</div>`
     })
 }
 
