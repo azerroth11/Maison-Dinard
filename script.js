@@ -40,55 +40,50 @@ const auvergne = {
         {
             id: 'CHATEAU DE PIZAY',
             cepages: [
-                { id: 'MORGON', robes: ['Rouge'] },
-                { id: 'BEAUJOLAIS', robes: ['Blanc', 'Rosé', 'Rouge'] },
-                { id: 'BOURGOGNE', robes: ['Blanc', 'Rouge'] },
+                { id: 'MORGON' },
+                { id: 'BEAUJOLAIS' },
+                { id: 'BOURGOGNE' },
             ],
         },
         {
             id: 'DOMAINE FAURY',
-            cepages: [{ id: 'CÔTE-RÔTIE', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'CÔTE-RÔTIE' }],
         },
         {
             id: 'DOMAINE YANN CHAVE',
-            cepages: [{ id: 'CROZES HERMITAGE', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'CROZES HERMITAGE' }],
         },
         {
             id: 'DOMAINE DE BEAURENARD',
-            cepages: [{ id: 'CHATEAUNEUF DU PAPE', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'CHATEAUNEUF DU PAPE' }],
         },
         {
             id: 'DOMAINE DE MONTVAC',
-            cepages: [{ id: 'VACQUEYRAS', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+            cepages: [{ id: 'VACQUEYRAS' }],
         },
         {
             id: 'DOMAINE DE LA GUICHARDE',
-            cepages: [
-                { id: 'CÔTES DU RHÔNE', robes: ['Blanc', 'Rosé', 'Rouge'] },
-            ],
+            cepages: [{ id: 'CÔTES DU RHÔNE' }],
         },
         {
             id: 'DOMAINE DE LA TOURADE',
             cepages: [
                 {
                     id: 'CÔTES DU RHÔNE VILLAGE',
-                    robes: ['Blanc', 'Rosé', 'Rouge'],
                 },
             ],
         },
         {
             id: 'DOMAINE FRANCOIS VILLARD',
-            cepages: [{ id: 'LES RHONES NORD', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'LES RHONES NORD' }],
         },
         {
             id: 'CUILLERON GAILLARD VILLARD',
-            cepages: [{ id: 'LES VINS DE VIENNE', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'LES VINS DE VIENNE' }],
         },
         {
             id: 'CHATEAU MAS NEUF',
-            cepages: [
-                { id: 'COSTIERES DE NÎMES', robes: ['Blanc', 'Rosé', 'Rouge'] },
-            ],
+            cepages: [{ id: 'COSTIERES DE NÎMES' }],
         },
     ],
 }
@@ -98,23 +93,113 @@ const bourgogne = {
     domains: [
         {
             id: 'DOMAINE LAMY-PILLOT',
-            cepages: [{ id: 'BOURGOGNES', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'BOURGOGNES' }],
         },
         {
             id: 'DOMAINE NATHALIE & GILLES FEVRE',
-            cepages: [{ id: 'CHABLIS', robes: ['Blanc'] }],
+            cepages: [{ id: 'CHABLIS' }],
         },
         {
-            id: 'DOMAINE DEVILLARD',
+            id: 'DOMAINES DEVILLARD',
             cepages: [
-                { id: 'MERCUREY', robes: ['Blanc', 'Rouge'] },
-                { id: 'GIVRY', robes: ['Blanc', 'Rouge'] },
-                { id: 'NUITS SAINT GEORGES', robes: ['Blanc', 'Rouge'] },
+                {
+                    id: 'MERCUREY',
+                    ref: [
+                        {
+                            id: 'Mercurey',
+                            link: './PDF/Vin/BOURGOGNE/Château de Chamirey/MERCUREY-BLANC.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Mercurey',
+                            link: './PDF/Vin/BOURGOGNE/Château de Chamirey/MERCUREY-ROUGE.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Mercurey 1er Cru La Mission',
+                            link: './PDF/Vin/BOURGOGNE/Château de Chamirey/MERCUREY-BLANC-PREMIER-CRU-LA-MISSION.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                        {
+                            id: 'Mercurey 1er Cru Les Ruelles',
+                            link: './PDF/Vin/BOURGOGNE/Château de Chamirey/MERCUREY-ROUGE-1C-LES-RUELLES.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Mercurey en Pierrelet',
+                            link: './PDF/Vin/BOURGOGNE/Château de Chamirey/MERCUREY-BLANC-EN-PIERRELET.pdf',
+                            color: 'Blanc',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'NUITS SAINT GEORGES',
+                    ref: [
+                        {
+                            id: 'Bourgogne Pinot Noir',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/bourgogne-pinot-noir-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Echezeaux Grand Cru',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/echezeaux-grand-cru-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Nuits Saint Georges',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/nuits-saint-georges-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: '1er Cru, « Aux 8 ouvrées »',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/nuits-saint-georges-premier-cru-aux-perdrix-cuvee-les-8-ouvrees-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: '1er Cru, « Les terres blanches »',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/nuits-saint-georges-premier-cru-les-terres-blanches-rouge-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Vosne-Romanée',
+                            link: './PDF/Vin/BOURGOGNE/Domaine des Perdrix/vosne-romanee-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+                {
+                    id: 'GIVRY',
+                    ref: [
+                        {
+                            id: 'Givry',
+                            link: './PDF/Vin/BOURGOGNE/Domaine de la Ferté/givry-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Givry 1er Cru « Servoisine »',
+                            link: './PDF/Vin/BOURGOGNE/Domaine de la Ferté/givry-1er-cru-servoisine-2018.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
             ],
         },
         {
             id: 'DOMAINE SAINT AMANT',
-            cepages: [{ id: 'BEAUMES-DE-VENISE', robes: ['Blanc', 'Rouge'] }],
+            cepages: [{ id: 'BEAUMES-DE-VENISE' }],
         },
     ],
 }
@@ -124,10 +209,7 @@ const grandEst = {
     domains: [
         {
             id: 'DOMAINE DES COMTES DE LUPFEN',
-            cepages: [
-                { id: "VIN D'ALSACE", robes: ['Blanc'] },
-                { id: 'EAU DE VIE', robes: ['Blanc'] },
-            ],
+            cepages: [{ id: "VIN D'ALSACE" }, { id: 'EAU DE VIE' }],
         },
     ],
 }
@@ -140,7 +222,6 @@ const nouvelleAquitaine = {
             cepages: [
                 {
                     id: 'SAINT ESTEPHE',
-                    robes: ['Rouge'],
                     ref: [
                         {
                             id: 'Château Le Crock',
@@ -158,7 +239,6 @@ const nouvelleAquitaine = {
                 },
                 {
                     id: 'SAINT JULIEN',
-                    robes: ['Rouge'],
                     ref: [
                         {
                             id: 'Château Leoville Poyferre',
@@ -187,7 +267,6 @@ const nouvelleAquitaine = {
                 },
                 {
                     id: 'GRANDS VINS DE BDX',
-                    robes: ['Blanc', 'Rosé', 'Rouge'],
                     ref: [
                         {
                             id: 'Château Crabitey',
@@ -209,7 +288,6 @@ const nouvelleAquitaine = {
             cepages: [
                 {
                     id: 'BORDEAUX ET ENTRE-DEUX-MERS',
-                    robes: ['Blanc', 'Rouge'],
                     ref: [
                         {
                             id: 'Château Bonnet',
@@ -245,7 +323,6 @@ const nouvelleAquitaine = {
                 },
                 {
                     id: 'MARGAUX',
-                    robes: ['Rouge'],
                     ref: [
                         {
                             id: 'Château Dauzac',
@@ -263,7 +340,6 @@ const nouvelleAquitaine = {
                 },
                 {
                     id: 'PESSAC-LÉOGNAN',
-                    robes: ['Blanc', 'Rouge'],
                     ref: [
                         {
                             id: 'Château Coucheroy',
@@ -335,7 +411,6 @@ const nouvelleAquitaine = {
                 },
                 {
                     id: 'LUSSAC-SAINT-ÉMILION',
-                    robes: ['Rouge'],
                     ref: [
                         {
                             id: 'Château Tour de Ségur',
@@ -349,11 +424,11 @@ const nouvelleAquitaine = {
         },
         {
             id: 'CHATEAU RAMAGE LA BATISSE',
-            cepages: [{ id: 'HAUT-MEDOC', robes: ['Rouge'], ref: [] }],
+            cepages: [{ id: 'HAUT-MEDOC', ref: [] }],
         },
         {
             id: 'CHATEAU DE BELCIER',
-            cepages: [{ id: 'CÔTES DE CASTILLON', robes: ['Rouge'], ref: [] }],
+            cepages: [{ id: 'CÔTES DE CASTILLON', ref: [] }],
         },
     ],
 }
@@ -363,39 +438,27 @@ const paysDeLaLoire = {
     domains: [
         {
             id: 'MAISON LAPORTE',
-            cepages: [
-                { id: 'SANCERRE', robes: ['Blanc', 'Rouge'] },
-                { id: 'POUILLY-FUME', robes: ['Blanc'] },
-            ],
+            cepages: [{ id: 'SANCERRE' }, { id: 'POUILLY-FUME' }],
         },
         {
             id: 'DOMAINES TATIN',
-            cepages: [
-                { id: 'QUINCY', robes: ['Blanc'] },
-                { id: 'REUILLY', robes: ['Blanc', 'Rouge'] },
-            ],
+            cepages: [{ id: 'QUINCY' }, { id: 'REUILLY' }],
         },
         {
             id: 'DOMAINE MAISON & FILS',
-            cepages: [{ id: 'CHEVERNY', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+            cepages: [{ id: 'CHEVERNY' }],
         },
         {
             id: 'PASCAL & ALAIN LORIEUX',
-            cepages: [
-                { id: 'ST NICOLAS DE BOURGUEIL', robes: ['Rosé', 'Rouge'] },
-                { id: 'CHINON', robes: ['Rosé', 'Rouge'] },
-            ],
+            cepages: [{ id: 'ST NICOLAS DE BOURGUEIL' }, { id: 'CHINON' }],
         },
         {
             id: 'DOMAINE FILLIATREAU',
-            cepages: [
-                { id: 'SAUMUR', robes: ['Blanc', 'Rosé', 'Rouge'] },
-                { id: 'SAUMUR CHAMPIGNY', robes: ['Rouge'] },
-            ],
+            cepages: [{ id: 'SAUMUR' }, { id: 'SAUMUR CHAMPIGNY' }],
         },
         {
             id: 'DOMAINE PIERRE LUNEAU-PAPIN',
-            cepages: [{ id: 'MUSCADET', robes: ['Blanc'] }],
+            cepages: [{ id: 'MUSCADET' }],
         },
     ],
 }
@@ -405,14 +468,13 @@ const provence = {
     domains: [
         {
             id: 'DOMAINE DE LA BEGUDE',
-            cepages: [{ id: 'BANDOL', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+            cepages: [{ id: 'BANDOL' }],
         },
         {
             id: 'CHATEAU PAS DU CERF',
             cepages: [
                 {
                     id: 'CÔTES DE PROVENCE',
-                    robes: ['Blanc', 'Rosé', 'Rouge'],
                 },
             ],
         },
@@ -424,18 +486,111 @@ const occitanie = {
     domains: [
         {
             id: 'CHATEAU PUECH-HAUT',
-            cepages: [{ id: 'LANGUEDOC', robes: ['Blanc', 'Rosé', 'Rouge'] }],
+            cepages: [
+                {
+                    id: 'LANGUEDOC',
+                    ref: [
+                        {
+                            id: 'La Closerie-du-Pic',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Pic Saint loup/La Closerie du Pic - Rosé.pdf',
+                            color: 'Rosé',
+                            bio: true,
+                        },
+                        {
+                            id: 'Le Loup du Pic Rouge',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Pic Saint loup/Le Loup du Pic - Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Cuvée Prestige',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Prestige/Rosé.pdf',
+                            color: 'Rosé',
+                            bio: true,
+                        },
+                        {
+                            id: 'Cuvée Prestige',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Prestige/Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Cuvées Tête de Bélier',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Tête de Bélier/Rosé.pdf',
+                            color: 'Rosé',
+                            bio: true,
+                        },
+                        {
+                            id: 'Cuvées Tête de Bélier',
+                            link: './PDF/Vin/LANGUEDOC/Château Puech-Haut/Cuvées Tête de Bélier/Rouge.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
+                },
+            ],
         },
         {
             id: 'DOMAINE SAINTE LEOCADIE',
-            cepages: [{ id: 'MINERVOIS', robes: ['Blanc', 'Rouge'] }],
+            cepages: [
+                {
+                    id: 'MINERVOIS',
+                    ref: [
+                        {
+                            id: 'La cuvée Leukadios',
+                            link: './PDF/Vin/LANGUEDOC/Domaine Sainte Leocadie/Cuvée Leukadios.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        { id: 'Les Clauses', link: undefined, bio: true },
+                        {
+                            id: 'La cuvée Fernand Averoux',
+                            link: './PDF/Vin/LANGUEDOC/Domaine Sainte Leocadie/Cuvée Fernand.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        { id: 'La cuvée Eden', link: undefined, bio: true },
+                    ],
+                },
+            ],
         },
         {
             id: 'DOMAINE DE LA CENDRILLON',
             cepages: [
                 {
                     id: 'IGP & AOP CORBIERES',
-                    robes: ['Blanc', 'Rosé', 'Rouge'],
+                    ref: [
+                        {
+                            id: 'Atypique',
+                            link: './PDF/Vin/LANGUEDOC/Domaine de la Cendrillon/Atypique 2016.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Classique',
+                            link: './PDF/Vin/LANGUEDOC/Domaine de la Cendrillon/Classique 2014.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Inédite',
+                            link: './PDF/Vin/LANGUEDOC/Domaine de la Cendrillon/Inedite 2012.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                        {
+                            id: 'Minuit',
+                            link: './PDF/Vin/LANGUEDOC/Domaine de la Cendrillon/Minuit 2016.pdf',
+                            color: 'Rosé',
+                            bio: true,
+                        },
+                        {
+                            id: 'N°1',
+                            link: './PDF/Vin/LANGUEDOC/Domaine de la Cendrillon/N1 2012.pdf',
+                            color: 'Rouge',
+                            bio: true,
+                        },
+                    ],
                 },
             ],
         },
@@ -551,7 +706,7 @@ function resetCepages() {
 
 // Create domains div
 function createDomainList(domain, domainDiv, domainP) {
-    domainP.addEventListener('click', e => {
+    domainP.addEventListener('click', () => {
         if (document.querySelector('.domainDivActive') == null) {
             const cepagesDiv = domainDiv.insertBefore(
                 document.createElement('div'),
@@ -606,13 +761,25 @@ function createCepagesList(domain, cepagesDiv) {
         cepagesInnerDivH4.innerHTML = cepage.id
         if (cepage.ref != undefined) {
             cepage.ref.forEach(reference => {
-                if (reference.id != undefined && reference.link != undefined) {
+                if (
+                    reference.id != undefined &&
+                    reference.link != undefined &&
+                    reference.link != ''
+                ) {
                     const chateauDiv = cepagesInnerDiv.insertBefore(
                         document.createElement('div'),
                         null
                     )
                     chateauDiv.classList.add('chateauDiv')
-                    chateauDiv.innerHTML = `<a href="${reference.link}"><i class="fas fa-file-download"></i><p>${reference.id}</p></a><p class="color"> - ${reference.color}</p>`
+                    chateauDiv.innerHTML = `<a href="${reference.link}"><i class="fas fa-file-download"></i><p>${reference.id}</p></a><p class="color">- ${reference.color}</p>`
+                } else {
+                    console.log(`Link for ${reference.id} not defined`)
+                    const chateauDiv = cepagesInnerDiv.insertBefore(
+                        document.createElement('div'),
+                        null
+                    )
+                    chateauDiv.classList.add('chateauDiv')
+                    chateauDiv.innerHTML = `<a href="javascript:;"><i class="fas fa-file-download"></i><p>${reference.id}</p></a><p class="color">- PDF manquant</p>`
                 }
             })
         }

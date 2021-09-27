@@ -386,6 +386,7 @@ nav img {
     display: grid;
     overflow: hidden;
     z-index: 2;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -412,8 +413,8 @@ nav img {
     top: 0;
     left: 0;
     transform: none;
-    width: 375px;
-    margin: auto;
+    width: 400px;
+    margin: auto auto auto 0;
 }
 
 .mapOverlay .overlayH1 {
@@ -462,7 +463,6 @@ nav img {
 
 .cepagesInnerDiv {
     padding-bottom: 1rem;
-    display: grid;
 }
 
 .cepagesInnerDiv a {
@@ -483,13 +483,14 @@ nav img {
 
 .cepagesInnerDiv .chateauDiv {
     display: flex;
+    /* flex-wrap: wrap; */
     position: relative;
     padding-bottom: 0.25rem;
 }
 
 .cepagesInnerDiv .chateauDiv .color {
-    display: block;
     opacity: 50%;
+    padding-left: 0.5rem;
 }
 
 /* Footer */
