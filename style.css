@@ -191,9 +191,8 @@ nav img {
 /* Beverage Choice */
 .beverage-choice {
     width: clamp(150px, 75%, 1200px);
-    max-height: 75vh;
-    display: flex;
-    flex-direction: column;
+    height: 75%;
+    display: grid;
     margin: 0 auto;
 }
 
@@ -369,23 +368,30 @@ nav img {
     align-items: center;
     position: absolute;
     top: 0.5rem;
-    right: 1rem;
+    right: 0.75rem;
     cursor: pointer;
     gap: 0.1rem !important;
 }
 
 /* Map - France/regions*/
+.sectionMap {
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
 .map {
     display: grid;
     overflow: hidden;
     z-index: 2;
-    margin-top: 5rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #chartdiv {
     height: 50vh;
-    width: 100%;
-    margin: auto;
 }
 
 .mapOverlay {
@@ -394,13 +400,20 @@ nav img {
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 350px;
-    display: grid;
-    /* gap: 0.75rem; */
     background-color: hsl(0, 25%, 91%);
     border-radius: 25px;
     overflow: hidden;
     border: 1px white solid;
     z-index: 2;
+}
+
+.mapOverlayDesktop {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 375px;
+    margin: auto;
 }
 
 .mapOverlay .overlayH1 {
@@ -439,7 +452,7 @@ nav img {
     padding-bottom: 0.25rem;
 }
 
-.domainDivActive {
+.domainDiv:hover {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -454,35 +467,28 @@ nav img {
 
 .cepagesInnerDiv a {
     color: var(--accent);
-    position: absolute;
-    left: -0.5rem;
-    top: 0;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .cepagesInnerDiv a i {
     font-size: 1rem;
 }
 
-.cepagesInnerDiv > p {
+.cepagesInnerDiv h4 {
     color: var(--accent);
     padding-bottom: 0.25rem;
     font-weight: bold;
 }
 
-.cepagesInnerDiv p i {
-    font-size: 1rem;
-    margin-left: 0.1rem;
-}
-
-.cepagesInnerDiv > div {
-    font-size: 1rem;
-    margin-left: 1.5rem;
+.cepagesInnerDiv .chateauDiv {
+    display: flex;
     position: relative;
     padding-bottom: 0.25rem;
 }
 
-.cepagesInnerDiv > div .color {
-    display: inline;
+.cepagesInnerDiv .chateauDiv .color {
+    display: block;
     opacity: 50%;
 }
 

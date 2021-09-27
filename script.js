@@ -22,12 +22,14 @@ map.chartContainer.background.events.disableType('doublehit')
 map.chartContainer.wheelable = false
 
 const vinsSelection = document.querySelector('.vins')
-const sectionMap = document.querySelector('.map')
+const sectionMap = document.querySelector('.sectionMap')
+const sectionMapDiv = document.querySelector('.map')
 const sectionMobileChoice = document.querySelector('.mobileChoice')
 vinsSelection.addEventListener('click', () => {
     const beverageSection = document.querySelector('.beverage-choice')
     beverageSection.classList.add('invisible')
     sectionMap.classList.remove('invisible')
+    sectionMapDiv.classList.remove('invisible')
     sectionMobileChoice.classList.remove('invisible')
 })
 
@@ -476,14 +478,19 @@ polygonTemplate.events.on('hit', function (ev) {
     const mapOverlay = document.querySelector('.mapOverlay')
     const overlayH1 = document.querySelector('.overlayH1')
     mapOverlay.classList.remove('invisible')
-    sectionMap.classList.add('blur')
+    sectionMapDiv.classList.add('blur')
     sectionMobileChoice.classList.add('blur')
+    if (window.innerWidth > 1000) {
+        mapOverlay.classList.add('mapOverlayDesktop')
+        sectionMapDiv.classList.remove('blur')
+        sectionMobileChoice.classList.add('blur')
+    }
     let clickedRegion = ev.target.dataItem.dataContext.name
     overlayH1.innerHTML = clickedRegion
     const closeBtnWine = document.querySelector('.fa-times')
     closeBtnWine.addEventListener('click', () => {
         mapOverlay.classList.add('invisible')
-        sectionMap.classList.remove('blur')
+        sectionMapDiv.classList.remove('blur')
         sectionMobileChoice.classList.remove('blur')
     })
     const selectedRegion = regionList.filter(i => i.id === clickedRegion)[0]
@@ -577,7 +584,7 @@ function createDomainList(domain, domainDiv, domainP) {
     })
 }
 
-// Remove domains which arene't active
+// Toggle domains which arene't active
 function toggleOtherDomains(domainDivList) {
     domainDivList.forEach(i => {
         i.classList.toggle('invisible')
@@ -592,11 +599,11 @@ function createCepagesList(domain, cepagesDiv) {
             null
         )
         cepagesInnerDiv.classList.add('cepagesInnerDiv')
-        const cepagesInnerDivP = cepagesInnerDiv.insertBefore(
-            document.createElement('p'),
+        const cepagesInnerDivH4 = cepagesInnerDiv.insertBefore(
+            document.createElement('h4'),
             null
         )
-        cepagesInnerDivP.innerHTML = cepage.id
+        cepagesInnerDivH4.innerHTML = cepage.id
         if (cepage.ref != undefined) {
             cepage.ref.forEach(reference => {
                 if (reference.id != undefined && reference.link != undefined) {
@@ -604,12 +611,8 @@ function createCepagesList(domain, cepagesDiv) {
                         document.createElement('div'),
                         null
                     )
-                    chateauDiv.innerHTML = `${reference.id} - <p class="color">${reference.color}</p>`
-                    const pdflink = chateauDiv.insertBefore(
-                        document.createElement('a'),
-                        null
-                    )
-                    pdflink.innerHTML = `<a href="${reference.link}"><i class="fas fa-file-download"></i></a>`
+                    chateauDiv.classList.add('chateauDiv')
+                    chateauDiv.innerHTML = `<a href="${reference.link}"><i class="fas fa-file-download"></i><p>${reference.id}</p></a><p class="color"> - ${reference.color}</p>`
                 }
             })
         }
