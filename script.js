@@ -615,7 +615,7 @@ regionList.forEach(region => {
     })
 })
 domainList.sort()
-// console.log(domainList)
+console.log(domainList)
 
 // Create the cepagesList
 const cepagesList = []
